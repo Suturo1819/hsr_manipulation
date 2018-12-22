@@ -1,0 +1,1 @@
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/iai_naive_kinematics_sim/share/common-lisp/ros/iai_naive_kinematics_sim/msg/_package_ProjectionClock.lisp

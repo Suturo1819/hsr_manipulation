@@ -1,0 +1,8 @@
+prefix=/home/michel/Desktop/suturo/motion/simulation/hsr_ws/install
+
+Name: iai_naive_kinematics_sim
+Description: Description of iai_naive_kinematics_sim
+Version: 0.0.4
+Cflags: -I/home/michel/Desktop/suturo/motion/simulation/hsr_ws/install/include
+Libs: -L/home/michel/Desktop/suturo/motion/simulation/hsr_ws/install/lib 
+Requires: roscpp message_generation message_runtime urdf sensor_msgs std_msgs

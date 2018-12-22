@@ -1,0 +1,13 @@
+workspace
+src
+
+catkin_create_pkg move giskardpy hsr_description hsr_meshes rospy std_msgs message_runtime message_generation
+
+roscore
+
+roslaunch iai_hsr_sim test.launch
+
+roslaunch iai_hsr_sim giskardpy_hsr.launch
+
+rviz
+

@@ -1,0 +1,19 @@
+[  0%] Built target move_xacro_generated_to_devel_space_
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target _move_generate_messages_check_deps_DoMoveResult
+[  0%] Built target _move_generate_messages_check_deps_DoMoveActionFeedback
+[  0%] Built target _move_generate_messages_check_deps_DoMoveAction
+[  0%] Built target _move_generate_messages_check_deps_DoMoveActionResult
+[  0%] Built target _move_generate_messages_check_deps_DoMoveGoal
+[  0%] Built target _move_generate_messages_check_deps_DoMoveActionGoal
+[  0%] Built target _move_generate_messages_check_deps_DoMoveFeedback
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[ 18%] Built target move_generate_messages_lisp
+[ 40%] Built target move_generate_messages_eus
+[ 59%] Built target move_generate_messages_cpp
+[100%] Built target move_generate_messages_nodejs
+[100%] Built target move_generate_messages_py
+[100%] Built target move_generate_messages

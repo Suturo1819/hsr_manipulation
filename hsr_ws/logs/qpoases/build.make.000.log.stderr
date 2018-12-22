@@ -1,0 +1,1504 @@
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+In file included from [01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1821:0[m[K,
+                 from [01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18[m[K,
+                 from [01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/arrayobject.h:4[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:685[m[K:
+[01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2:[m[K [01;35m[Kwarning: [m[K#warning is a GCC extension
+ #warning "Using deprecated NumPy API, disable it by " \
+[01;32m[K  ^[m[K
+[01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2:[m[K [01;35m[Kwarning: [m[K#warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:793:34:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KPyAPI_FUNC[m[K’
+ #       define PyAPI_FUNC(RTYPE) RTYPE
+[01;32m[K                                  ^[m[K
+[01m[K/usr/include/python2.7/intobject.h:46:21:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(unsigned PY_LONG_LONG) PyInt_AsUnsignedLongLongMask(PyObject *);
+[01;32m[K                     ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/longobject.h:50:44:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(PyObject *) PyLong_FromLongLong(PY_LONG_LONG);
+[01;32m[K                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/longobject.h:51:61:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(PyObject *) PyLong_FromUnsignedLongLong(unsigned PY_LONG_LONG);
+[01;32m[K                                                             ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:793:34:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KPyAPI_FUNC[m[K’
+ #       define PyAPI_FUNC(RTYPE) RTYPE
+[01;32m[K                                  ^[m[K
+[01m[K/usr/include/python2.7/longobject.h:52:12:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(PY_LONG_LONG) PyLong_AsLongLong(PyObject *);
+[01;32m[K            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:793:34:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KPyAPI_FUNC[m[K’
+ #       define PyAPI_FUNC(RTYPE) RTYPE
+[01;32m[K                                  ^[m[K
+[01m[K/usr/include/python2.7/longobject.h:53:21:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(unsigned PY_LONG_LONG) PyLong_AsUnsignedLongLong(PyObject *);
+[01;32m[K                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:793:34:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KPyAPI_FUNC[m[K’
+ #       define PyAPI_FUNC(RTYPE) RTYPE
+[01;32m[K                                  ^[m[K
+[01m[K/usr/include/python2.7/longobject.h:54:21:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(unsigned PY_LONG_LONG) PyLong_AsUnsignedLongLongMask(PyObject *);
+[01;32m[K                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:793:34:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KPyAPI_FUNC[m[K’
+ #       define PyAPI_FUNC(RTYPE) RTYPE
+[01;32m[K                                  ^[m[K
+[01m[K/usr/include/python2.7/longobject.h:55:12:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ PyAPI_FUNC(PY_LONG_LONG) PyLong_AsLongLongAndOverflow(PyObject *, int *);
+[01;32m[K            ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_common.h:295:9:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ typedef PY_LONG_LONG npy_longlong;
+[01;32m[K         ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[K/home/michel/.local/lib/python2.7/site-packages/numpy/core/include/numpy/npy_common.h:296:18:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ typedef unsigned PY_LONG_LONG npy_ulonglong;
+[01;32m[K                  ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_20terminationTolerance_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:5708:116:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_terminationTolerance); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 294, __pyx_L1_error)
+[01;32m[K                                                                                                                    ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_14boundTolerance_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:5792:110:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_boundTolerance); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 298, __pyx_L1_error)
+[01;32m[K                                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_15boundRelaxation_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:5876:111:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_boundRelaxation); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 302, __pyx_L1_error)
+[01;32m[K                                                                                                               ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_6epsNum_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:5960:102:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsNum); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 306, __pyx_L1_error)
+[01;32m[K                                                                                                      ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_6epsDen_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6044:102:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsDen); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 310, __pyx_L1_error)
+[01;32m[K                                                                                                      ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_13maxPrimalJump_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6128:109:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_maxPrimalJump); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 314, __pyx_L1_error)
+[01;32m[K                                                                                                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_11maxDualJump_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6212:107:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_maxDualJump); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 318, __pyx_L1_error)
+[01;32m[K                                                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_14initialRamping_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6296:110:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_initialRamping); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 322, __pyx_L1_error)
+[01;32m[K                                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_12finalRamping_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6380:108:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_finalRamping); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 326, __pyx_L1_error)
+[01;32m[K                                                                                                            ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_16initialFarBounds_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6464:112:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_initialFarBounds); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 330, __pyx_L1_error)
+[01;32m[K                                                                                                                ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_13growFarBounds_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6548:109:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_growFarBounds); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 334, __pyx_L1_error)
+[01;32m[K                                                                                                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_11epsFlipping_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6716:107:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsFlipping); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 342, __pyx_L1_error)
+[01;32m[K                                                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_17epsRegularisation_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:6884:113:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsRegularisation); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 350, __pyx_L1_error)
+[01;32m[K                                                                                                                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_10epsIterRef_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:7052:106:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsIterRef); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 358, __pyx_L1_error)
+[01;32m[K                                                                                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_10epsLITests_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:7136:106:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsLITests); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 362, __pyx_L1_error)
+[01;32m[K                                                                                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_7qpoases_9PyOptions_11epsNZCTests_2__set__(__pyx_obj_7qpoases_PyOptions*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:7220:107:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+   __pyx_t_1 = __pyx_PyFloat_AsDouble(__pyx_v_epsNZCTests); if (unlikely((__pyx_t_1 == ((qpOASES::real_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 366, __pyx_L1_error)
+[01;32m[K                                                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __pyx_f_7qpoases_18PySolutionAnalysis__getKktViolation_QProblemB(__pyx_obj_7qpoases_PySolutionAnalysis*, __pyx_obj_7qpoases_PyQProblemB*, PyArrayObject*, PyArrayObject*, PyArrayObject*, int)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:15035:139:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 781, __pyx_L1_error)
+[01;32m[K                                                                                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:15035:188:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 781, __pyx_L1_error)
+[01;32m[K                                                                                                                                                                                            ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:15035:237:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 781, __pyx_L1_error)
+[01;32m[K                                                                                                                                                                                                                                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __pyx_f_7qpoases_18PySolutionAnalysis__getKktViolation_QProblem(__pyx_obj_7qpoases_PySolutionAnalysis*, __pyx_obj_7qpoases_PyQProblem*, PyArrayObject*, PyArrayObject*, PyArrayObject*, int)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:15389:139:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 794, __pyx_L1_error)
+[01;32m[K                                                                                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:15389:188:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 794, __pyx_L1_error)
+[01;32m[K                                                                                                                                                                                            ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:15389:237:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 794, __pyx_L1_error)
+[01;32m[K                                                                                                                                                                                                                                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __pyx_f_7qpoases_18PySolutionAnalysis__getKktViolation_SQProblem(__pyx_obj_7qpoases_PySolutionAnalysis*, __pyx_obj_7qpoases_PySQProblem*, PyArrayObject*, PyArrayObject*, PyArrayObject*, int)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:15743:139:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 808, __pyx_L1_error)
+[01;32m[K                                                                                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:15743:188:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 808, __pyx_L1_error)
+[01;32m[K                                                                                                                                                                                            ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:15743:237:[m[K [01;35m[Kwarning: [m[Kcast to pointer from integer of different size [-Wint-to-pointer-cast]
+   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->thisptr->getKktViolation(__pyx_v_qp->thisptr, ((qpOASES::real_t *)(__pyx_v_maxStat->data[0])), ((qpOASES::real_t *)(__pyx_v_maxFeas->data[0])), ((qpOASES::real_t *)(__pyx_v_maxCmpl->data[0])))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 808, __pyx_L1_error)
+[01;32m[K                                                                                                                                                                                                                                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __pyx_pw_7qpoases_5py_runOQPbenchmark(PyObject*, PyObject*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:17760:106:[m[K [01;35m[Kwarning: [m[Kcomparing floating point with == or != is unsafe [-Wfloat-equal]
+     __pyx_v_maxCPUTime = __pyx_PyFloat_AsDouble(values[5]); if (unlikely((__pyx_v_maxCPUTime == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 862, __pyx_L3_error)
+[01;32m[K                                                                                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject*, Py_buffer*, int)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:19863:111:[m[K [01;35m[Kwarning: [m[Kconversion to ‘[01m[Klong unsigned int[m[K’ from ‘[01m[Kint[m[K’ may change the sign of the result [-Wsign-conversion]
+     __pyx_v_info->strides = ((Py_ssize_t *)PyObject_Malloc((((sizeof(Py_ssize_t)) * 2) * ((size_t)__pyx_v_ndim))));
+[01;32m[K                                                                                                               ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kvoid initqpoases()[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:1669:64:[m[K [01;35m[Kwarning: [m[Kconversion to ‘[01m[Klong unsigned int[m[K’ from ‘[01m[KPy_ssize_t {aka long int}[m[K’ may change the sign of the result [-Wsign-conversion]
+ #define Py_MEMBER_SIZE(type, member) sizeof(((type *)0)->member)
+[01;32m[K                                                                ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:1675:75:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPy_MEMBER_SIZE[m[K’
+      (void)(__pyx_pyframe_localsplus_offset = PyFrame_Type.tp_basicsize - Py_MEMBER_SIZE(PyFrameObject, f_localsplus)))
+[01;32m[K                                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:24461:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__Pxy_PyFrame_Initialize_Offsets[m[K’
+   __Pxy_PyFrame_Initialize_Offsets();
+[01;32m[K   ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kvoid __Pyx_RaiseArgtupleInvalid(const char*, int, Py_ssize_t, Py_ssize_t, Py_ssize_t)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:27098:59:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+                  (num_expected == 1) ? "" : "s", num_found);
+[01;32m[K                                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27098:59:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Ksize_t __Pyx_BufFmt_TypeCharToNativeSize(char, int)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27551:39:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+     case 'q': case 'Q': return sizeof(PY_LONG_LONG);
+[01;32m[K                                       ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K At global scope:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27571:26:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ typedef struct { char c; PY_LONG_LONG x; } __Pyx_st_longlong;
+[01;32m[K                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Ksize_t __Pyx_BufFmt_TypeCharToAlignment(char, int)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27580:67:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+     case 'q': case 'Q': return sizeof(__Pyx_st_longlong) - sizeof(PY_LONG_LONG);
+[01;32m[K                                                                   ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K At global scope:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27603:18:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+ typedef struct { PY_LONG_LONG x; char c; } __Pyx_pad_longlong;
+[01;32m[K                  ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Ksize_t __Pyx_BufFmt_TypeCharToPadding(char, int)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27612:68:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+     case 'q': case 'Q': return sizeof(__Pyx_pad_longlong) - sizeof(PY_LONG_LONG);
+[01;32m[K                                                                    ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __Pyx_BufFmt_ProcessTypeChunk(__Pyx_BufFmt_Context*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:27680:78:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+                          ctx->head->field->type->arraysize[0], ctx->enc_count);
+[01;32m[K                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27680:78:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+[01m[Kinterfaces/python/qpoases.cpp:27732:67:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+                    (Py_ssize_t)ctx->fmt_offset, (Py_ssize_t)offset);
+[01;32m[K                                                                   ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27732:67:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __pyx_buffmt_parse_array(__Pyx_BufFmt_Context*, const char**)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:27794:69:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+                         ctx->head->field->type->arraysize[i], number);
+[01;32m[K                                                                     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __Pyx__GetBufferAndValidate(Py_buffer*, PyObject*, __Pyx_TypeInfo*, int, int, int, __Pyx_BufFmt_StackElem*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:27987:73:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+       dtype->name, (Py_ssize_t)dtype->size, (dtype->size > 1) ? "s" : "");
+[01;32m[K                                                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:27987:73:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyObject_Call2Args(PyObject*, PyObject*, PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:28239:25:[m[K [01;35m[Kwarning: [m[Kdeclaration of ‘[01m[Kargs[m[K’ shadows a previous local [-Wshadow]
+         PyObject *args[2] = {arg1, arg2};
+[01;32m[K                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:28236:15:[m[K [01;36m[Knote: [m[Kshadowed declaration is here
+     PyObject *args, *result = NULL;
+[01;32m[K               ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kvoid __Pyx_RaiseTooManyValuesError(Py_ssize_t)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:28474:94:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+                  "too many values to unpack (expected %" CYTHON_FORMAT_SSIZE_T "d)", expected);
+[01;32m[K                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kvoid __Pyx_RaiseNeedMoreValuesError(Py_ssize_t)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:28481:48:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+                  index, (index == 1) ? "" : "s");
+[01;32m[K                                                ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyTypeObject* __Pyx_ImportType(PyObject*, const char*, const char*, size_t, __Pyx_ImportType_CheckSize)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:28800:53:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+             module_name, class_name, size, basicsize);
+[01;32m[K                                                     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:28800:53:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+[01m[Kinterfaces/python/qpoases.cpp:28807:53:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+             module_name, class_name, size, basicsize);
+[01;32m[K                                                     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:28807:53:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+[01m[Kinterfaces/python/qpoases.cpp:28814:53:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+             module_name, class_name, size, basicsize);
+[01;32m[K                                                     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:28814:53:[m[K [01;35m[Kwarning: [m[KISO C++98 does not support the ‘[01m[Kz[m[K’ gnu_printf length modifier [-Wformat=]
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_enum__qpOASES_3a__3a_BooleanType(qpOASES::BooleanType)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:29055:137:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+     const enum qpOASES::BooleanType neg_one = (enum qpOASES::BooleanType) ((enum qpOASES::BooleanType) 0 - (enum qpOASES::BooleanType) 1), const_zero = (enum qpOASES::BooleanType) 0;
+[01;32m[K                                                                                                                                         ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29063:73:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::BooleanType) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                         ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29064:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29071:64:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::BooleanType) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29072:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_enum__qpOASES_3a__3a_PrintLevel(qpOASES::PrintLevel)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29094:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::PrintLevel) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29095:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29102:63:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::PrintLevel) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                               ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29103:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_enum__qpOASES_3a__3a_HessianType(qpOASES::HessianType)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:29117:137:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::HessianType[m[K’ [-Wconversion]
+     const enum qpOASES::HessianType neg_one = (enum qpOASES::HessianType) ((enum qpOASES::HessianType) 0 - (enum qpOASES::HessianType) 1), const_zero = (enum qpOASES::HessianType) 0;
+[01;32m[K                                                                                                                                         ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29125:73:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::HessianType) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                         ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29126:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29133:64:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::HessianType) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29134:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_enum__qpOASES_3a__3a_SubjectToStatus(qpOASES::SubjectToStatus)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29156:77:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::SubjectToStatus) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                             ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29157:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29164:68:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::SubjectToStatus) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                    ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29165:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_enum__qpOASES_3a__3a_returnValue(qpOASES::returnValue)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29187:73:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::returnValue) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                         ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29188:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29195:64:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum qpOASES::returnValue) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29196:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_int(int)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29240:51:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                   ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29241:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29248:42:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29249:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_long(long int)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29271:52:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                    ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29272:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29279:43:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29280:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KPyObject* __Pyx_PyInt_From_enum__NPY_TYPES(NPY_TYPES)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:29604:93:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KNPY_TYPES[m[K’ [-Wconversion]
+     const enum NPY_TYPES neg_one = (enum NPY_TYPES) ((enum NPY_TYPES) 0 - (enum NPY_TYPES) 1), const_zero = (enum NPY_TYPES) 0;
+[01;32m[K                                                                                             ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29612:62:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum NPY_TYPES) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                              ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29613:58:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+[01;32m[K                                                          ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29620:53:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+         } else if (sizeof(enum NPY_TYPES) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29621:41:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             return PyLong_FromLongLong((PY_LONG_LONG) value);
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Kint __Pyx_PyInt_As_int(PyObject*)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29702:55:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                       ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:59:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:59:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:59:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:59:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                           ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29703:59:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                           ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29772:46:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                              ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:50:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                  ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:50:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                  ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:50:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                  ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:50:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                  ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29773:50:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                  ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[Klong int __Pyx_PyInt_As_long(PyObject*)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29891:56:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:60:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:60:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:60:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:60:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29892:60:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                            ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29961:47:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                               ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:51:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                   ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:51:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                   ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:51:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                   ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:51:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                   ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29962:51:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(long, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                   ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KqpOASES::PrintLevel __Pyx_PyInt_As_enum__qpOASES_3a__3a_PrintLevel(PyObject*)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30080:76:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(enum qpOASES::PrintLevel) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:80:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:80:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:80:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:80:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30081:80:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30150:67:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(enum qpOASES::PrintLevel) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                   ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:71:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                       ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:71:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                       ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:71:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                       ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:71:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                       ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30151:71:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::PrintLevel, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                       ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KqpOASES::BooleanType __Pyx_PyInt_As_enum__qpOASES_3a__3a_BooleanType(PyObject*)[m[K’:
+[01m[Kinterfaces/python/qpoases.cpp:30202:137:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+     const enum qpOASES::BooleanType neg_one = (enum qpOASES::BooleanType) ((enum qpOASES::BooleanType) 0 - (enum qpOASES::BooleanType) 1), const_zero = (enum qpOASES::BooleanType) 0;
+[01;32m[K                                                                                                                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30207:13:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, long, PyInt_AS_LONG(x))
+[01;32m[K             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30223:26:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                 case  1: __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, digit, digits[0])
+[01;32m[K                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30227:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30236:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30245:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30267:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned long, PyLong_AsUnsignedLong(x))
+[01;32m[K                 ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30269:77:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(enum qpOASES::BooleanType) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                             ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:81:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                 ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:81:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                 ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:81:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                 ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:81:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                 ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:81:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30270:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30278:26:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                 case -1: __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, sdigit, (sdigit) (-(sdigit)digits[0]))
+[01;32m[K                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30279:26:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                 case  1: __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType,  digit, +digits[0])
+[01;32m[K                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30283:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30285:94:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                             return (enum qpOASES::BooleanType) (((enum qpOASES::BooleanType)-1)*(((((enum qpOASES::BooleanType)digits[1]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[0])));
+[01;32m[K                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30285:195:[m[K [01;35m[Kwarning: [m[Koverflow in implicit constant conversion [-Woverflow]
+                             return (enum qpOASES::BooleanType) (((enum qpOASES::BooleanType)-1)*(((((enum qpOASES::BooleanType)digits[1]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[0])));
+[01;32m[K                                                                                                                                                                                                   ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30292:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30301:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30303:94:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                             return (enum qpOASES::BooleanType) (((enum qpOASES::BooleanType)-1)*(((((((enum qpOASES::BooleanType)digits[2]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[1]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[0])));
+[01;32m[K                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30303:254:[m[K [01;35m[Kwarning: [m[Koverflow in implicit constant conversion [-Woverflow]
+                             return (enum qpOASES::BooleanType) (((enum qpOASES::BooleanType)-1)*(((((((enum qpOASES::BooleanType)digits[2]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[1]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[0])));
+[01;32m[K                                                                                                                                                                                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30310:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30319:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30321:94:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                             return (enum qpOASES::BooleanType) (((enum qpOASES::BooleanType)-1)*(((((((((enum qpOASES::BooleanType)digits[3]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[2]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[1]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[0])));
+[01;32m[K                                                                                              ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30321:313:[m[K [01;35m[Kwarning: [m[Koverflow in implicit constant conversion [-Woverflow]
+                             return (enum qpOASES::BooleanType) (((enum qpOASES::BooleanType)-1)*(((((((((enum qpOASES::BooleanType)digits[3]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[2]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[1]) << PyLong_SHIFT) | (enum qpOASES::BooleanType)digits[0])));
+[01;32m[K                                                                                                                                                                                                                                                                                                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29210:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30328:29:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT[m[K’
+                             __PYX_VERIFY_RETURN_INT(enum qpOASES::BooleanType, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+[01;32m[K                             ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30337:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, long, PyLong_AsLong(x))
+[01;32m[K                 ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30339:68:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(enum qpOASES::BooleanType) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                    ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                        ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29220:43:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+                     return (target_type) -1;\
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30340:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::BooleanType, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30369:49:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+             return (enum qpOASES::BooleanType) -1;
+[01;32m[K                                                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30374:55:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+         if (!tmp) return (enum qpOASES::BooleanType) -1;
+[01;32m[K                                                       ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30382:41:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+     return (enum qpOASES::BooleanType) -1;
+[01;32m[K                                         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30386:41:[m[K [01;35m[Kwarning: [m[Kthe result of the conversion is unspecified because ‘[01m[K-1[m[K’ is outside the range of type ‘[01m[KqpOASES::BooleanType[m[K’ [-Wconversion]
+     return (enum qpOASES::BooleanType) -1;
+[01;32m[K                                         ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[Kinterfaces/python/qpoases.cpp:[m[K In function ‘[01m[KqpOASES::SubjectToStatus __Pyx_PyInt_As_enum__qpOASES_3a__3a_SubjectToStatus(PyObject*)[m[K’:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30458:81:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(enum qpOASES::SubjectToStatus) <= sizeof(unsigned PY_LONG_LONG)) {
+[01;32m[K                                                                                 ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:85:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:85:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:85:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:85:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                     ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30459:85:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+[01;32m[K                                                                                     ^[m[K
+In file included from [01m[K/usr/include/python2.7/Python.h:58:0[m[K,
+                 from [01m[Kinterfaces/python/qpoases.cpp:61[m[K:
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30528:72:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+             } else if (sizeof(enum qpOASES::SubjectToStatus) <= sizeof(PY_LONG_LONG)) {
+[01;32m[K                                                                        ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29215:9:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         func_type value = func_value;\
+[01;32m[K         ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:76:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29216:42:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+         if (sizeof(target_type) < sizeof(func_type)) {\
+[01;32m[K                                          ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:76:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:76:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29218:17:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+                 func_type zero = 0;\
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:76:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                            ^[m[K
+[01m[K/usr/include/python2.7/pyport.h:69:27:[m[K [01;35m[Kwarning: [m[KISO C++ 1998 does not support ‘[01m[Klong long[m[K’ [-Wlong-long]
+ #define PY_LONG_LONG long long
+[01;32m[K                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:873:43:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[Kunlikely[m[K’
+   #define unlikely(x) __builtin_expect(!!(x), 0)
+[01;32m[K                                           ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:29212:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX__VERIFY_RETURN_INT[m[K’
+     __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+[01;32m[K     ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:17:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[K__PYX_VERIFY_RETURN_INT_EXC[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                 ^[m[K
+[01m[Kinterfaces/python/qpoases.cpp:30529:76:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KPY_LONG_LONG[m[K’
+                 __PYX_VERIFY_RETURN_INT_EXC(enum qpOASES::SubjectToStatus, PY_LONG_LONG, PyLong_AsLongLong(x))
+[01;32m[K                                                                            ^[m[K
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kcommand line option ‘[01m[K-Wstrict-prototypes[m[K’ is valid for C/ObjC but not for C++
+[01m[Ksrc/Utils.cpp:[m[K In function ‘[01m[KqpOASES::real_t qpOASES::getCPUtime()[m[K’:
+[01m[Ksrc/Utils.cpp:580:30:[m[K [01;35m[Kwarning: [m[Kconversion to ‘[01m[Kdouble[m[K’ from ‘[01m[K__time_t {aka long int}[m[K’ may alter its value [-Wconversion]
+  current_time = 1.0*theclock.tv_sec + 1.0e-6*theclock.tv_usec;
+[01;32m[K                              ^[m[K
+[01m[Ksrc/Utils.cpp:580:55:[m[K [01;35m[Kwarning: [m[Kconversion to ‘[01m[Kdouble[m[K’ from ‘[01m[K__suseconds_t {aka long int}[m[K’ may alter its value [-Wconversion]
+  current_time = 1.0*theclock.tv_sec + 1.0e-6*theclock.tv_usec;
+[01;32m[K                                                       ^[m[K

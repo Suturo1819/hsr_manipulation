@@ -1,0 +1,5 @@
+giskardpy
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskardpy/lib/python2.7/dist-packages/giskardpy/__init__.py /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/lib/python2.7/dist-packages/giskardpy/__init__.py
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskardpy/lib/pkgconfig/giskardpy.pc /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/lib/pkgconfig/giskardpy.pc
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskardpy/share/giskardpy/cmake/giskardpyConfig.cmake /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/giskardpy/cmake/giskardpyConfig.cmake
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskardpy/share/giskardpy/cmake/giskardpyConfig-version.cmake /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/giskardpy/cmake/giskardpyConfig-version.cmake

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -std=c++11   -shared -Wl,-soname,libgtest.so -o libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/michel/Desktop/suturo/motion/simulation/hsr_ws/build/iai_naive_kinematics_sim/gtest/gtest/src -lpthread -Wl,-rpath,/home/michel/Desktop/suturo/motion/simulation/hsr_ws/build/iai_naive_kinematics_sim/gtest/gtest/src 

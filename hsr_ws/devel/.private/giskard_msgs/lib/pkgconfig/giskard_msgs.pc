@@ -1,0 +1,8 @@
+prefix=/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskard_msgs
+
+Name: giskard_msgs
+Description: Description of giskard_msgs
+Version: 0.1.0
+Cflags: -I/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskard_msgs/include
+Libs: -L/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskard_msgs/lib 
+Requires: std_msgs geometry_msgs actionlib_msgs sensor_msgs trajectory_msgs shape_msgs message_runtime actionlib

@@ -1,0 +1,4 @@
+Symlinking /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/lib/python2.7/dist-packages/giskardpy/__init__.py
+Symlinking /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/lib/pkgconfig/giskardpy.pc
+Symlinking /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/giskardpy/cmake/giskardpyConfig.cmake
+Symlinking /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/giskardpy/cmake/giskardpyConfig-version.cmake

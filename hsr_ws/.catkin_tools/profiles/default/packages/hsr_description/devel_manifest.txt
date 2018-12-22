@@ -1,0 +1,4 @@
+hsr_description
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/hsr_description/lib/pkgconfig/hsr_description.pc /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/lib/pkgconfig/hsr_description.pc
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/hsr_description/share/hsr_description/cmake/hsr_descriptionConfig.cmake /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/hsr_description/cmake/hsr_descriptionConfig.cmake
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/hsr_description/share/hsr_description/cmake/hsr_descriptionConfig-version.cmake /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/hsr_description/cmake/hsr_descriptionConfig-version.cmake

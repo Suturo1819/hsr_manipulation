@@ -1,0 +1,1 @@
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/iai_naive_kinematics_sim/lib/python2.7/dist-packages/iai_naive_kinematics_sim/__init__.py

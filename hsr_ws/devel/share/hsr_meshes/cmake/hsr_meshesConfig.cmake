@@ -1,0 +1,1 @@
+/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/hsr_meshes/share/hsr_meshes/cmake/hsr_meshesConfig.cmake

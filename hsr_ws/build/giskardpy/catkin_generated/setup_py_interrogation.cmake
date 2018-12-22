@@ -1,0 +1,6 @@
+set(giskardpy_SETUP_PY_VERSION "0.0.0")
+set(giskardpy_SETUP_PY_SCRIPTS "")
+set(giskardpy_SETUP_PY_PACKAGES "giskardpy")
+set(giskardpy_SETUP_PY_PACKAGE_DIRS "src/giskardpy")
+set(giskardpy_SETUP_PY_MODULES "")
+set(giskardpy_SETUP_PY_MODULE_DIRS "")
