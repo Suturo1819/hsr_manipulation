@@ -1,0 +1,51 @@
+body_controller:
+  type: position_controllers/JointTrajectoryController  
+  joints:
+    - arm_flex_joint
+    - arm_lift_joint
+    - arm_roll_joint
+    #- base_footprint_joint
+    #- base_imu_frame_joint
+    #- base_l_drive_wheel_joint
+    #- base_l_passive_wheel_x_frame_joint
+    #- base_l_passive_wheel_y_frame_joint
+    #- base_l_passive_wheel_z_joint
+    #- base_range_sensor_joint
+    #- base_r_drive_wheel_joint
+    #- base_roll_joint
+    #- base_r_passive_wheel_x_frame_joint
+    #- base_r_passive_wheel_y_frame_joint
+    #- base_r_passive_wheel_z_joint
+    #- hand_camera_frame_joint
+    #- hand_camera_gazebo_frame_joint
+    #- hand_l_distal_joint
+    #- hand_l_finger_tip_frame_joint
+    #- hand_l_finger_vacuum_frame_joint
+    #- hand_l_mimic_distal_joint
+    #- hand_l_proximal_joint
+    #- hand_l_spring_proximal_joint
+    #- hand_motor_joint
+    #- hand_palm_joint
+    #- hand_r_distal_joint
+    #- hand_r_finger_tip_frame_joint
+    #- hand_r_mimic_distal_joint
+    #- hand_r_proximal_joint
+    #- hand_r_spring_proximal_joint
+    #- head_center_camera_frame_joint
+    #- head_center_camera_gazebo_frame_joint
+    #- head_l_stereo_camera_gazebo_frame_joint
+    #- head_l_stereo_camera_joint
+    - head_pan_joint
+    #- head_rgbd_sensor_gazebo_frame_joint
+    #- head_rgbd_sensor_joint
+    #- head_r_stereo_camera_gazebo_frame_joint
+    #- head_r_stereo_camera_joint
+    - head_tilt_joint
+    #- torso_lift_joint
+    - wrist_flex_joint
+    #- wrist_ft_sensor_frame_joint
+    - wrist_roll_joint
+  constraints:
+    stopped_velocity_tolerance: 0.5
+    goal_time: 0.05
+    
