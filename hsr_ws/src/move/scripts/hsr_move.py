@@ -131,7 +131,7 @@ class HsrMove:
       if col:
         print("arm_lift and flex are found")
         return float(arm_lift), float(arm_flex_value)
-      else
+      else:
         print("arm_lift and flex are not found")
         return 0.0, 0.0
     elif (arm_lift < 0):
