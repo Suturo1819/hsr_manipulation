@@ -1,8 +1,0 @@
-# define the goal
-string goal_msg
----
-# define the result
-string result_msg
----
-# define feedback
-string feedback_msg

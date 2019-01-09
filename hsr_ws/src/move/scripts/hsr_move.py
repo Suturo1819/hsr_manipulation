@@ -18,9 +18,9 @@ class HsrMove:
     self.check_mobility = Mobility()
     self.interface = GiskardWrapper()
     self.pose_stamped = PoseStamped()
-    self.list_body_section_name = [section.name for section in Body]
-    self.list_direction_name = [select_direction.name for select_direction in Direction]
-    self.states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "arm_roll_joint": 0.0, "wrist_flex_joint": -1.57, "wrist_roll_joint": 0.0}
+    #self.list_body_section_name = [section.name for section in Body]
+    #self.list_direction_name = [select_direction.name for select_direction in Direction] #"wrist_flex_joint": -1.57
+    self.states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "arm_roll_joint": 0.0, "wrist_flex_joint": 0.0, "wrist_roll_joint": 0.0}
     self.primary_states= {"arm_lift_joint": 0.0, "arm_flex_joint": -0.026, "arm_roll_joint": -1.57, "wrist_flex_joint": -1.57, "wrist_roll_joint": 0.0}
   
   def init_robot(self):
@@ -85,7 +85,16 @@ class HsrMove:
       print ("Move is executed")
     else:
       print ("Move joint isn't executed")
-
+  
+  def do_move_joints(self, joint_names, joint_values):
+    if(len(joint_names) == len(joint_names)) and len(joint_names) > 0:
+      for x in range(len(joint_names)):
+        self.move_joint(joint_names[x], joint_values[x])
+      print ("End move joint")
+    else:
+      print ("Joint list is empty")
+    
+  
   def get_distance(self, vec1, vec2):
     return float(np.linalg.norm(np.array(vec1) - np.array(vec2)))
   
@@ -102,19 +111,53 @@ class HsrMove:
     coefficient= vector2 / vector1
     coef1= coefficient[0]
     for x in coefficient[1:3]:
-      if x != coef1:
+      if round(x,2) != round(coef1,2):
         return False
         
     return True
     
-  def get_arm_flex_and_arm_lift_values(self, arm_flex_position, hand_palm_link_position, object_position):
-    arm_lift = 0.0 #value arm_lift
-    dist_arm_flex_object = float(self.get_distance(arm_flex_position, object_position)) # get distance between arm_flex - object
-    dist_arm_flex_hand = float(self.get_distance(arm_flex_position, hand_palm_link_position)) # get distance with arm_flex - hand_palm_link
-    while(arm_lift <= 0.69 and 0.05 <= (dist_arm_flex_object - dist_arm_flex_hand)):
-      # ajouter 0.01 au Z de flex ou lift, ensuite exprimer l'ouverture...et verifier si les vecteurs sont parallele
-      #height = hauteur entre flex et objet sur axe z
-      #angle = arccos(hauteur/ float(self.get_distance(hand_palm_link_position, arm_flex_position))
-      #verifier si la nouvellle hauteur et abstand
-      arm_lift= arm_lift + 0.01
+  def get_arm_flex_and_arm_lift_values(self, wrist_flex_link_position, object_position):
+    arm_lift = (object_position - 0.34) #value arm_lift
+    # check if the height is sufficient
+    if (arm_lift <= 0.61 and arm_lift >= 0 ):
+      arm_lift = arm_lift * 0.5
+      arm_flex_value= 0 # value arm_flex
+      col = False # wrist and object are collinear
+      while(arm_flex_value >= -2.617 and not col):
+        new_wrist_flex_link_position = self.rotate_pitch(wrist_flex_link_position, arm_flex_value)
+        col = self.is_collinear(new_wrist_flex_link_position, object_position)
+        arm_flex_value = arm_flex_value - 0.01
+      
+      if col:
+        print("arm_lift and flex are found")
+        return float(arm_lift), float(arm_flex_value)
+      else
+        print("arm_lift and flex are not found")
+        return 0.0, 0.0
+    elif (arm_lift < 0):
+      arm_lift = abs(arm_lift)
+      wrist_flex_link_position = self.rotate_pitch(wrist_flex_link_position, arm_flex_value)
       pass
+      return 0.0, 0.0
+    # arm_lift > 0.67
+    else:
+      return 0.0, 0.0
+      
+      
+  def rotate_roll(self, pose, angle):
+    homogenous_matrix= np.array([[1, 0, 0], 
+      [0, cos(angle), -sin(angle)],
+      [0, sin(angle), cos(angle)]])
+    return np.dot(homogenous_matrix, pose)
+    
+  def rotate_pitch(self, pose, angle):
+    homogenous_matrix= np.array([[cos(angle), 0, sin(angle)], 
+      [0, 1, 0],
+      [-sin(angle), 0, cos(angle)]])
+    return np.dot(homogenous_matrix, pose)
+
+  def rotate_yaw(self, pose, angle, translation):
+    homogenous_matrix= np.array([[cos(angle), 0, sin(angle)], 
+      [0, 1, 0],
+      [-sin(angle), 0, cos(angle)]])
+    return np.dot(homogenous_matrix, pose)
