@@ -29,7 +29,7 @@ class DoMovePosesServer:
     print object_pose
     self.do_move_links(list_poses) # +++++
     #goal.result_msg = " Move is executed "
-    #self.server.set_succeeded()
+    self.server.set_succeeded()
     
   def do_move_links(self, list_poses):
     count_success= 0
@@ -54,7 +54,7 @@ class DoMovePosesServer:
         print ("End move links")
         self._result.result_msg = ("all links are moved")
         rospy.loginfo('all links are moved with success')
-        self.server.set_succeeded(self._result)
+        #self.server.set_succeeded(self._result)
     
     else:
       print ("Links list is empty")

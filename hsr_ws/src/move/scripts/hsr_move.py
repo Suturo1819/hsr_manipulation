@@ -64,16 +64,15 @@ class HsrMove:
     self.pose_stamped.pose.position.z = z
     self.pose_stamped.pose.orientation.w = w
     self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
-    if self.interface.plan_and_execute():
-      print ("Move link is executed")
-      return True
-      
-    return False
+    self.interface.plan_and_execute():
+    print ("Move link is executed")
+    return True
+
     
   def old_move_link(self, frame_id, x, y, z, w):
     """ do move of link """
     print ("Frame_id "+ frame_id+", x: "+ x + ", y: "+ y +", z: "+ z + ", w: "+ w)
-    self.pose_stamped.header.frame_id = frame_id
+    self.pose_stamped.header.frame_id = u'map' #frame_id
     self.pose_stamped.pose.position.x = self.get_coordinate(x)
     self.pose_stamped.pose.position.y = self.get_coordinate(y)
     self.pose_stamped.pose.position.z = self.get_coordinate(z)
