@@ -4,10 +4,8 @@ control_msgs/JointTrajectoryControllerState desired_joints_values
 ---
 # define the result
 string result_msg
-control_msgs/JointTrajectoryControllerState desired_joints_values
 control_msgs/JointTrajectoryControllerState current_joints_values
 ---
 # define feedback
 string feedback_msg
-control_msgs/JointTrajectoryControllerState desired_joints_values
-control_msgs/JointTrajectoryControllerState current_joints_values
+control_msgs/JointTrajectoryControllerState successful_joints_values

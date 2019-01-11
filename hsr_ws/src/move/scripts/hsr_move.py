@@ -49,14 +49,28 @@ class HsrMove:
     elif move_parameter[0] == "joint":
       param_frame_id= move_parameter[1]
       param_value= move_parameter[2]
-      self.move_joint(param_frame_id, param_value)
+      feedback_joint = self.move_joint(param_frame_id, param_value)
       print ("Move is done")
     else:
       print ("command isn't sended")
       print move_parameter[0]
  
-  
   def move_link(self, frame_id, x, y, z, w):
+    """ do move of link """
+    print ("Frame_id "+ str(frame_id)+", x: "+ str(x) + ", y: "+ str(y) +", z: "+ str(z) + ", w: "+ str(w))
+    self.pose_stamped.header.frame_id = frame_id
+    self.pose_stamped.pose.position.x = x
+    self.pose_stamped.pose.position.y = y
+    self.pose_stamped.pose.position.z = z
+    self.pose_stamped.pose.orientation.w = w
+    self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
+    if self.interface.plan_and_execute():
+      print ("Move link is executed")
+      return True
+      
+    return False
+    
+  def old_move_link(self, frame_id, x, y, z, w):
     """ do move of link """
     print ("Frame_id "+ frame_id+", x: "+ x + ", y: "+ y +", z: "+ z + ", w: "+ w)
     self.pose_stamped.header.frame_id = frame_id
@@ -65,8 +79,11 @@ class HsrMove:
     self.pose_stamped.pose.position.z = self.get_coordinate(z)
     self.pose_stamped.pose.orientation.w = self.get_coordinate(w)
     self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
-    self.interface.plan_and_execute()
-    print ("Move link is executed")
+    if self.interface.plan_and_execute():
+      print ("Move link is executed")
+      return True
+      
+    return False
   
   def get_coordinate(self, point):
     """convert string value to float """
@@ -83,8 +100,10 @@ class HsrMove:
       self.interface.disable_self_collision() # 3
       self.interface.plan_and_execute()
       print ("Move is executed")
+      return True
     else:
       print ("Move joint isn't executed")
+      return False
   
   def do_move_joints(self, joint_names, joint_values):
     if(len(joint_names) == len(joint_names)) and len(joint_names) > 0:
