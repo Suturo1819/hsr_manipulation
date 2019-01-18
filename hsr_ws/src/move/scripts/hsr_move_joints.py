@@ -8,6 +8,8 @@ from hsr_move import HsrMove
 import move.msg
 from move.msg import DoMoveJointsAction
 import control_msgs
+from tf2_msgs.msg import TFMessage
+from utils import Utils
 
 class DoMoveJointsServer:
 
@@ -19,16 +21,53 @@ class DoMoveJointsServer:
     self.server.start()
     self.mvt = HsrMove() # ++++++
     self.mvt.init_robot()
+    self.utils = Utils()
     
   
   def execute(self, list_desired_joints):
     # Do lots of awesome groundbreaking robot stuff here
-    print (str(list_desired_joints.goal_msg))
-    joint_names = list_desired_joints.desired_joints_values.joint_names
-    joint_values = list_desired_joints.desired_joints_values.desired.positions
-    print joint_names
-    print joint_values
-    self.do_move_joints(joint_names, joint_values) # +++++
+    goal_msg= list_desired_joints.goal_msg
+    #print joint_names
+    #print joint_values
+    #print self.object_pose
+    if goal_msg == "move":
+      joint_names = list_desired_joints.desired_joints_values.joint_names
+      joint_values = list_desired_joints.desired_joints_values.desired.positions
+      self.do_move_joints(joint_names, joint_values) # +++++
+      self.server.set_succeeded(self._result)
+    elif goal_msg == "grip":
+      object_pose= []
+      object_pose.append(list_desired_joints.object_pose.position.x)
+      object_pose.append(list_desired_joints.object_pose.position.y)
+      object_pose.append(list_desired_joints.object_pose.position.z)
+      #self.list_pose= []
+      # do move Torso
+      joint_names= ["arm_flex_joint", "wrist_flex_joint"]
+      list_links =  ["arm_flex_link", "wrist_flex_link", "hand_palm_link"]
+      
+      list_poses = [self.mvt.get_pose(x) for x in list_links]
+      print list_poses
+      arm_flex_value = self.mvt.get_flex_values(list_poses[0], list_poses[1], object_pose)
+      print arm_flex_value
+      wrist_value = self.mvt.get_flex_values(list_poses[1], list_poses[2], object_pose)
+      print wrist_value
+      joint_values = [- arm_flex_value , -1.919 + wrist_value]
+      print(" done grip")
+      
+      self.do_move_joints(joint_names, joint_values) # +++++
+      
+      # do move arm_flex
+      new_hand_palm_link_pose = self.mvt.get_pose("hand_palm_link")
+      new_arm_flex_link_pose = self.mvt.get_pose("arm_flex_link")
+      lift_value = self.mvt.get_arm_lift_up(new_arm_flex_link_pose,new_hand_palm_link_pose, object_pose)
+      s= self.mvt.move_joint("arm_lift_joint", float(lift_value))
+      # end
+      #self.mvt.end_pose_robot()
+      self.server.set_succeeded(self._result)
+      
+      #self.do_move_joints(["arm_lift_joint","arm_flex_joint", "wrist_flex_joint"], self.get_joint_values(self.list_pose, object_pose))
+    else:
+      print("No found goal_msg command")
     #goal.result_msg = " Move is executed "
     #self.server.set_succeeded()
     
@@ -46,7 +85,7 @@ class DoMoveJointsServer:
         
         if success:
           count_success = count_success + 1
-          self._feedback.feedback_msg = str(count_success)+" of "+ str(len(joint_names))+ " Joints are moved. "
+          self._feedback.feedback_msg = float(count_success/len(joint_names))
           self._feedback.successful_joints_values.joint_names.append(joint_names[x])
           self._feedback.successful_joints_values.actual.positions.append(joint_values[x])
           rospy.loginfo(str(joint_names[x]) + " is moved to " + str(joint_values[x]))
@@ -58,14 +97,12 @@ class DoMoveJointsServer:
         self._result.current_joints_values.joint_names = joint_names
         self._result.current_joints_values.actual.positions = joint_values
         rospy.loginfo('all joints are moved with success')
-        self.server.set_succeeded(self._result)
+        
     
     else:
       print ("Joint list is empty")
       success = False
-    
-
-
+      
 if __name__ == '__main__':
   rospy.init_node('do_move_joints_server')
   server = DoMoveJointsServer()

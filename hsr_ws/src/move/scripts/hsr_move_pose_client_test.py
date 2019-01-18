@@ -19,12 +19,11 @@ if __name__ == '__main__':
   p.header.frame_id = 'wrist_roll_link'
   p.pose.position.x = 0.3
   p.pose.position.y = 0.0
-  p.pose.position.z = 0.2
+  p.pose.position.z = 0.05
   goal.list_poses.append(p)
   # Fill in the goal here
   client.send_goal(goal)
   #client.wait_for_result(move.msg.DoMoveJointsResult)
-  #client.wait_for_result(rospy.Duration.from_sec(5.0))
-  client.wait_for_result()
-  return client.get_result()
+  client.wait_for_result(rospy.Duration.from_sec(5.0))
+  #client.wait_for_result()
   #client.wait_for_result()

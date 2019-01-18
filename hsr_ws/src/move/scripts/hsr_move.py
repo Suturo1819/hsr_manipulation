@@ -7,6 +7,9 @@ import numpy as np
 from tf.transformations import quaternion_about_axis
 from enum import Enum
 from mobility import Mobility
+from utils import Utils
+import tf2_ros
+import tf2_geometry_msgs
   
 
 class HsrMove:
@@ -20,7 +23,7 @@ class HsrMove:
     self.pose_stamped = PoseStamped()
     #self.list_body_section_name = [section.name for section in Body]
     #self.list_direction_name = [select_direction.name for select_direction in Direction] #"wrist_flex_joint": -1.57
-    self.states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "arm_roll_joint": 0.0, "wrist_flex_joint": 0.0, "wrist_roll_joint": 0.0}
+    self.states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": 0.0, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0, "arm_lift_joint": 0.0}
     self.primary_states= {"arm_lift_joint": 0.0, "arm_flex_joint": -0.026, "arm_roll_joint": -1.57, "wrist_flex_joint": -1.57, "wrist_roll_joint": 0.0}
   
   def init_robot(self):
@@ -35,6 +38,12 @@ class HsrMove:
       print ("Start_end_pose is done")
     except ValueError:
       print "Parameter are invalid"
+      
+  def end_pose_robot(self):
+    self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.57}
+    for x,y in self.end_states.items():
+      self.move_joint(x, y)
+    print ("End_pose is done")
   
   def do_move(self, move_parameter):
     """ execute move of one joint or link """
@@ -58,13 +67,13 @@ class HsrMove:
   def move_link(self, frame_id, x, y, z, w):
     """ do move of link """
     print ("Frame_id "+ str(frame_id)+", x: "+ str(x) + ", y: "+ str(y) +", z: "+ str(z) + ", w: "+ str(w))
-    self.pose_stamped.header.frame_id = frame_id
+    self.pose_stamped.header.frame_id = u'map' #frame_id
     self.pose_stamped.pose.position.x = x
     self.pose_stamped.pose.position.y = y
     self.pose_stamped.pose.position.z = z
-    self.pose_stamped.pose.orientation.w = w
+    self.pose_stamped.pose.orientation.w = 1
     self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
-    self.interface.plan_and_execute():
+    self.interface.plan_and_execute()
     print ("Move link is executed")
     return True
 
@@ -113,69 +122,45 @@ class HsrMove:
       print ("Joint list is empty")
     
   
-  def get_distance(self, vec1, vec2):
-    return float(np.linalg.norm(np.array(vec1) - np.array(vec2)))
-  
   def get_vector(self,point1,point2):
     """ calcul and return a vector from two points """
     return np.array(point2, float)-np.array(point1, float)
     
-  def is_collinear(self, vector1, vector2):
-    """ check if two vetctors are collinear,
-        param1: array
-        param2: array
-        return: true if vectors are collinear
-    """
-    coefficient= vector2 / vector1
-    coef1= coefficient[0]
-    for x in coefficient[1:3]:
-      if round(x,2) != round(coef1,2):
-        return False
-        
-    return True
+  # same for angle by wrist_flex:  wrist_flex_link_pose, hand_palm_link_pose, object_pose
+  def get_flex_values(self, middle_link_pose, grip_link_pose, object_pose):
+    #arm_flex_link_pose[1]=0
+    #wrist_flex_link_pose[1]= 0
+    #object_pose[1]= 0
+    vect_middle_grip = self.get_vector(middle_link_pose, grip_link_pose)
+    vect_middle_obj = self.get_vector(middle_link_pose, object_pose)
+    return float(np.arccos(np.dot(vect_middle_grip,vect_middle_obj) / (np.linalg.norm(vect_middle_grip) * np.linalg.norm(vect_middle_obj))))
     
-  def get_arm_flex_and_arm_lift_values(self, wrist_flex_link_position, object_position):
-    arm_lift = (object_position - 0.34) #value arm_lift
-    # check if the height is sufficient
-    if (arm_lift <= 0.61 and arm_lift >= 0 ):
-      arm_lift = arm_lift * 0.5
-      arm_flex_value= 0 # value arm_flex
-      col = False # wrist and object are collinear
-      while(arm_flex_value >= -2.617 and not col):
-        new_wrist_flex_link_position = self.rotate_pitch(wrist_flex_link_position, arm_flex_value)
-        col = self.is_collinear(new_wrist_flex_link_position, object_position)
-        arm_flex_value = arm_flex_value - 0.01
-      
-      if col:
-        print("arm_lift and flex are found")
-        return float(arm_lift), float(arm_flex_value)
-      else:
-        print("arm_lift and flex are not found")
-        return 0.0, 0.0
-    elif (arm_lift < 0):
-      arm_lift = abs(arm_lift)
-      wrist_flex_link_position = self.rotate_pitch(wrist_flex_link_position, arm_flex_value)
-      pass
-      return 0.0, 0.0
-    # arm_lift > 0.67
+  def get_arm_lift_up(self, arm_flex_link, hand_palm_link, object_pose):
+    h = (object_pose[2] - 0.34) - (hand_palm_link[2] - 0.34)
+    if h > 0 :
+      return float(h)
+    elif h < 0:
+      return float(arm_flex_link.z - 0.34 - abs(h))
     else:
-      return 0.0, 0.0
-      
-      
-  def rotate_roll(self, pose, angle):
-    homogenous_matrix= np.array([[1, 0, 0], 
-      [0, cos(angle), -sin(angle)],
-      [0, sin(angle), cos(angle)]])
-    return np.dot(homogenous_matrix, pose)
+      return h
+    #arm_lift = 0
+    #while(0.67 <= h):
+      #arm_lift = arm_lift + h * 0.3
+      #h = h - arm_lift
     
-  def rotate_pitch(self, pose, angle):
-    homogenous_matrix= np.array([[cos(angle), 0, sin(angle)], 
-      [0, 1, 0],
-      [-sin(angle), 0, cos(angle)]])
-    return np.dot(homogenous_matrix, pose)
-
-  def rotate_yaw(self, pose, angle, translation):
-    homogenous_matrix= np.array([[cos(angle), 0, sin(angle)], 
-      [0, 1, 0],
-      [-sin(angle), 0, cos(angle)]])
-    return np.dot(homogenous_matrix, pose)
+    
+    
+  def get_pose(self, frame_id):
+    tf_buffer = tf2_ros.Buffer()
+    tf_listener = tf2_ros.TransformListener(tf_buffer)
+    #print tf_listener
+    ps = PoseStamped()
+    
+    transform = tf_buffer.lookup_transform("map",
+                                         frame_id,
+                                         rospy.Time(0),
+                                         rospy.Duration(1.0)) 
+    #print transform
+    pose_transformed = tf2_geometry_msgs.do_transform_pose(ps, transform)
+    return [pose_transformed.pose.position.x, pose_transformed.pose.position.y, pose_transformed.pose.position.z]
+            

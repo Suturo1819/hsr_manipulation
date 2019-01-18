@@ -41,7 +41,7 @@ class DoMovePosesServer:
           success = False
           break
           
-        success = self.mvt.move_link(list_poses[x].header.frame_id, list_poses[x].pose.position.x, list_poses[x].pose.position.y, list_poses[x].pose.position.z, 1.0)
+        success = self.mvt.move_link(list_poses[x].header.frame_id, list_poses[x].pose.position.x, list_poses[x].pose.position.y, list_poses[x].pose.position.z, 1)
         
         if success:
           count_success = count_success + 1
