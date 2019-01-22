@@ -7,6 +7,7 @@ import numpy as np
 from tf.transformations import quaternion_about_axis
 from enum import Enum
 from mobility import Mobility
+from hsr_gripper import HsrGripper
 from utils import Utils
 import tf2_ros
 import tf2_geometry_msgs
@@ -43,7 +44,8 @@ class HsrMove:
     self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.57}
     for x,y in self.end_states.items():
       self.move_joint(x, y)
-    print ("End_pose is done")
+    print ("End_start_pose is done")
+    return True
   
   def do_move(self, move_parameter):
     """ execute move of one joint or link """
@@ -163,4 +165,7 @@ class HsrMove:
     #print transform
     pose_transformed = tf2_geometry_msgs.do_transform_pose(ps, transform)
     return [pose_transformed.pose.position.x, pose_transformed.pose.position.y, pose_transformed.pose.position.z]
+    
+  def get_distance(self, vec1, vec2):
+    return float(np.linalg.norm(np.array(vec1) - np.array(vec2)))
             

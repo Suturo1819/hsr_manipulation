@@ -1,7 +1,7 @@
 # define the goal
 string goal_msg
 geometry_msgs/Pose object_pose
-float64 weigth
+float64 weight
 float64 width
 float64 height
 control_msgs/JointTrajectoryControllerState desired_joints_values

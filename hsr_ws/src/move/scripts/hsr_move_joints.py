@@ -10,6 +10,9 @@ from move.msg import DoMoveJointsAction
 import control_msgs
 from tf2_msgs.msg import TFMessage
 from utils import Utils
+from hsr_gripper import HsrGripper 
+from hsr_omnibase import HsrOmnibase
+import numpy as np
 
 class DoMoveJointsServer:
 
@@ -20,12 +23,16 @@ class DoMoveJointsServer:
     self.server = actionlib.SimpleActionServer('do_move_joints', DoMoveJointsAction, self.execute, False)
     self.server.start()
     self.mvt = HsrMove() # ++++++
-    self.mvt.init_robot()
+    self.hg = HsrGripper()
+    self.base = HsrOmnibase()
+    #self.mvt.init_robot()
     self.utils = Utils()
     
   
   def execute(self, list_desired_joints):
     # Do lots of awesome groundbreaking robot stuff here
+    self.mvt.init_robot()
+    #self.mvt.end_pose_robot()
     goal_msg= list_desired_joints.goal_msg
     #print joint_names
     #print joint_values
@@ -44,6 +51,7 @@ class DoMoveJointsServer:
       # do move Torso
       joint_names= ["arm_flex_joint", "wrist_flex_joint"]
       list_links =  ["arm_flex_link", "wrist_flex_link", "hand_palm_link"]
+      width_object = float(list_desired_joints.width)
       
       list_poses = [self.mvt.get_pose(x) for x in list_links]
       print list_poses
@@ -61,6 +69,20 @@ class DoMoveJointsServer:
       new_arm_flex_link_pose = self.mvt.get_pose("arm_flex_link")
       lift_value = self.mvt.get_arm_lift_up(new_arm_flex_link_pose,new_hand_palm_link_pose, object_pose)
       s= self.mvt.move_joint("arm_lift_joint", float(lift_value))
+      
+      # go to object
+      distance= self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose))
+      print("The distance")
+      print distance
+      
+      # grasp
+      print("Width")
+      print width_object
+      #success_gripper = self.hg.move_gripper(width_object, 0, 0.1)
+      
+      # go back
+      #success_omnibase = self.base(x, y)
+      
       # end
       #self.mvt.end_pose_robot()
       self.server.set_succeeded(self._result)
