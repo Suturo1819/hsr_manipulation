@@ -41,7 +41,7 @@ class HsrMove:
       print "Parameter are invalid"
       
   def end_pose_robot(self):
-    self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.57}
+    self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0}
     for x,y in self.end_states.items():
       self.move_joint(x, y)
     print ("End_start_pose is done")

@@ -25,6 +25,8 @@ class DoMoveJointsServer:
     self.mvt = HsrMove() # ++++++
     self.hg = HsrGripper()
     self.base = HsrOmnibase()
+    #success_omnibase = self.base.move_base(0.05, 0)
+    success_gripper = self.hg.move_gripper(1.2, 0, 0.1)
     #self.mvt.init_robot()
     self.utils = Utils()
     
@@ -71,20 +73,30 @@ class DoMoveJointsServer:
       s= self.mvt.move_joint("arm_lift_joint", float(lift_value))
       
       # go to object
+      new_hand_palm_link_pose = self.mvt.get_pose("hand_palm_link")
+      print("The new position of hand palm link is :")
+      print new_hand_palm_link_pose
+      print("The position of object is :")
+      print object_pose
       distance= self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose))
       print("The distance")
       print distance
+      success_omnibase = self.base.move_base(distance, 0)
       
       # grasp
       print("Width")
       print width_object
-      #success_gripper = self.hg.move_gripper(width_object, 0, 0.1)
+      success_gripper = self.hg.move_gripper(width_object, 0, 0.1)
+      
       
       # go back
-      #success_omnibase = self.base(x, y)
+      success_omnibase = self.base.move_base(0, 0)
+      
+      # let object
+      #success_gripper = self.hg.move_gripper(1.2, 0, 0.1)
       
       # end
-      #self.mvt.end_pose_robot()
+      self.mvt.end_pose_robot()
       self.server.set_succeeded(self._result)
       
       #self.do_move_joints(["arm_lift_joint","arm_flex_joint", "wrist_flex_joint"], self.get_joint_values(self.list_pose, object_pose))

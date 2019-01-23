@@ -17,10 +17,10 @@ if __name__ == '__main__':
   
   goal = DoMoveJointsGoal()
   goal.goal_msg = "grip"
-  goal.object_pose.position.x= 1.0
+  goal.object_pose.position.x= 1.02
   goal.object_pose.position.y= 0.0
   goal.object_pose.position.z= 0.6
-  goal.width = 1.0
+  goal.width = 0.1
   #goal.desired_joints_values.joint_names = ["arm_lift_joint", "arm_flex_joint"]
   #goal.desired_joints_values.desired.positions = [0.0, -1.57]
   #goal.desired_joints_values.desired.positions = [0.0, -0.0]
