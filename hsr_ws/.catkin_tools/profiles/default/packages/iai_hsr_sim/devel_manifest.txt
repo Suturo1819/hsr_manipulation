@@ -1,4 +1,0 @@
-iai_hsr_sim
-/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/iai_hsr_sim/lib/pkgconfig/iai_hsr_sim.pc /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/lib/pkgconfig/iai_hsr_sim.pc
-/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/iai_hsr_sim/share/iai_hsr_sim/cmake/iai_hsr_simConfig.cmake /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/iai_hsr_sim/cmake/iai_hsr_simConfig.cmake
-/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/iai_hsr_sim/share/iai_hsr_sim/cmake/iai_hsr_simConfig-version.cmake /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/share/iai_hsr_sim/cmake/iai_hsr_simConfig-version.cmake

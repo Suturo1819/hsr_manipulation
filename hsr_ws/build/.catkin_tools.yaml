@@ -1,6 +1,0 @@
-devel_space: /home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel
-install: false
-install_space: /home/michel/Desktop/suturo/motion/simulation/hsr_ws/install
-profile: default
-source_space: /home/michel/Desktop/suturo/motion/simulation/hsr_ws/src
-workspace: /home/michel/Desktop/suturo/motion/simulation/hsr_ws

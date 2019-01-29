@@ -1,1 +1,0 @@
-/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskardpy/lib/python2.7/dist-packages/giskardpy/__init__.py

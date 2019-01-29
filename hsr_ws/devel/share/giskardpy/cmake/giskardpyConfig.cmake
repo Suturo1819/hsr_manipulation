@@ -1,1 +1,0 @@
-/home/michel/Desktop/suturo/motion/simulation/hsr_ws/devel/.private/giskardpy/share/giskardpy/cmake/giskardpyConfig.cmake
