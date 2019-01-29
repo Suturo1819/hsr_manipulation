@@ -5,8 +5,7 @@ roslib.load_manifest('move')
 import rospy
 import actionlib
 from hsr_move import HsrMove
-import move.msg
-from move.msg import DoMoveJointsAction
+from suturo_manipulation_msgs.msg import DoMoveJointsAction
 import control_msgs
 from tf2_msgs.msg import TFMessage
 from utils import Utils
