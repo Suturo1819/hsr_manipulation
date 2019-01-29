@@ -5,9 +5,9 @@ roslib.load_manifest('move')
 import rospy
 import actionlib
 import sys
-import move.msg
+import suturo_manipulation_msgs.msg
+from suturo_manipulation_msgs.msg import DoMoveJointsAction, DoMoveJointsGoal
 import geometry_msgs.msg
-from move.msg import DoMoveJointsAction, DoMoveJointsGoal
 from tf2_msgs.msg import TFMessage
  
 if __name__ == '__main__':
