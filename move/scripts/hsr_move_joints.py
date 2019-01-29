@@ -5,7 +5,7 @@ roslib.load_manifest('move')
 import rospy
 import actionlib
 from hsr_move import HsrMove
-from suturo_manipulation_msgs.msg import DoMoveJointsAction
+from suturo_manipulation_msgs.msg import DoMoveJointsAction as sut_action_msg
 import control_msgs
 from tf2_msgs.msg import TFMessage
 from utils import Utils
@@ -15,8 +15,8 @@ import numpy as np
 
 class DoMoveJointsServer:
 
-  _feedback = move.msg.DoMoveJointsFeedback()
-  _result = move.msg.DoMoveJointsResult()
+  _feedback = sut_action_msg.DoMoveJointsFeedback()
+  _result = sut_action_msg.DoMoveJointsResult()
   
   def __init__(self):
     self.server = actionlib.SimpleActionServer('do_move_joints', DoMoveJointsAction, self.execute, False)
