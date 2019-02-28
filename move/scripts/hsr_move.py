@@ -11,6 +11,8 @@ from hsr_gripper import HsrGripper
 from utils import Utils
 import tf2_ros
 import tf2_geometry_msgs
+import tf
+import roslib
   
 
 class HsrMove:
@@ -41,7 +43,7 @@ class HsrMove:
       print "Parameter are invalid"
       
   def end_pose_robot(self):
-    self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0}
+    self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
     for x,y in self.end_states.items():
       self.move_joint(x, y)
     print ("End_start_pose is done")
@@ -129,7 +131,14 @@ class HsrMove:
     return np.array(point2, float)-np.array(point1, float)
     
   # same for angle by wrist_flex:  wrist_flex_link_pose, hand_palm_link_pose, object_pose
-  def get_flex_values(self, middle_link_pose, grip_link_pose, object_pose):
+  def get_angle_values(self, middle_link_pose, grip_link_pose, object_pose):
+    """
+    this method compute the angle between two links
+    :param middle_link_pose: 3D Vector
+    :param grip_link_pose: 3D Vector
+    :param object_pose: 3D Vector
+    :return: angle, float
+    """
     #arm_flex_link_pose[1]=0
     #wrist_flex_link_pose[1]= 0
     #object_pose[1]= 0
@@ -138,11 +147,18 @@ class HsrMove:
     return float(np.arccos(np.dot(vect_middle_grip,vect_middle_obj) / (np.linalg.norm(vect_middle_grip) * np.linalg.norm(vect_middle_obj))))
     
   def get_arm_lift_up(self, arm_flex_link, hand_palm_link, object_pose):
+    """
+    This method compute the height of the torso
+    :param arm_flex_link:
+    :param hand_palm_link:
+    :param object_pose:
+    :return: height, float
+    """
     h = (object_pose[2] - 0.34) - (hand_palm_link[2] - 0.34)
     if h > 0 :
       return float(h)
     elif h < 0:
-      return float(arm_flex_link.z - 0.34 - abs(h))
+      return float(arm_flex_link[2] - 0.34 - abs(h))
     else:
       return h
     #arm_lift = 0
@@ -152,20 +168,86 @@ class HsrMove:
     
     
     
-  def get_pose(self, frame_id):
+  def get_pose(self,source, frame_id):
+    """
+    the method get exactly the pose of link frame_id to source(map or odom)
+    :param source: odom or map, typ string
+    :param frame_id: string
+    :return: [x, y, z] float array
+    """
     tf_buffer = tf2_ros.Buffer()
     tf_listener = tf2_ros.TransformListener(tf_buffer)
     #print tf_listener
     ps = PoseStamped()
     
-    transform = tf_buffer.lookup_transform("map",
+    transform = tf_buffer.lookup_transform(source,
                                          frame_id,
                                          rospy.Time(0),
-                                         rospy.Duration(1.0)) 
+                                         rospy.Duration(5.0))
     #print transform
     pose_transformed = tf2_geometry_msgs.do_transform_pose(ps, transform)
     return [pose_transformed.pose.position.x, pose_transformed.pose.position.y, pose_transformed.pose.position.z]
+
+  def get_msg_translation_and_rotation(self, source, frame_id):
+    """
+    the method get exactly the pose of link frame_id to source(map or odom)
+    :param source: odom or map, typ string
+    :param frame_id: string
+    :return: translation, rotation(quaternion)
+    """
+    tf_buffer = tf2_ros.Buffer()
+    tf_listener = tf2_ros.TransformListener(tf_buffer)
+    # print tf_listener
+    ps = PoseStamped()
+
+    transform = tf_buffer.lookup_transform(source,
+                                           frame_id,
+                                           rospy.Time(0),
+                                           rospy.Duration(5.0))
+
+    return [transform.transform.translation.x, transform.transform.translation.y, transform.transform.translation.z],\
+           [transform.transform.rotation.x, transform.transform.rotation.y, transform.transform.rotation.z, transform.transform.rotation.w]
+
+  def parse_pose_to_array(self, pose):
+    """
+      this method get the exactly value of x, y and z from a pose msg
+    :param pose: geometry msg
+    :return: x, y, z float
+    """
+    return [pose.position.x, pose.position.y, pose.position.z]
     
   def get_distance(self, vec1, vec2):
+    """
+    calculate the distance between two vectors
+    :param vec1:
+    :param vec2:
+    :return: distance float
+    """
     return float(np.linalg.norm(np.array(vec1) - np.array(vec2)))
-            
+
+  def get_current_base_position(self):
+    """
+    the method check the current pose of base_footprint to odom and get it
+    :return: x, y, rotation
+    """
+    t, r = self.get_msg_translation_and_rotation("odom", "base_footprint")
+    return self.base_position(t, r)
+
+  def translate(self, position, translation_vector):
+    """
+    the method does a translation on a position
+    :param position: current pose
+    :param translation_vector: translation vector
+    :return: vector[x, y], new position
+    """
+    return position[0]+translation_vector[0], position[1]+translation_vector[1]
+
+  def base_position(self, translation, rotation):
+    """
+    the method take the translation and rotation from tf_ros and calculate the rotation in euler
+    :param translation: vector
+    :param rotation: quaternion (from tf_ros)
+    :return: vector[x, y, rotation], current base position
+    """
+    euler = tf.transformations.euler_from_quaternion(rotation)
+    return translation[0], translation[1], euler[2]

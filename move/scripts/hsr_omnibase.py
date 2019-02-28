@@ -29,13 +29,13 @@ class HsrOmnibase:
             if c.name == 'omni_base_controller' and c.state == 'running':
                 self._running = True
                 
-  def move_base(self, x, y):
+  def move_base(self, x, y, z):
     # fill ROS message
     goal = control_msgs.msg.FollowJointTrajectoryGoal()
     traj = trajectory_msgs.msg.JointTrajectory()
     traj.joint_names = ["odom_x", "odom_y", "odom_t"]
     p = trajectory_msgs.msg.JointTrajectoryPoint()
-    p.positions = [x, y, 0]
+    p.positions = [x, y, z]
     p.velocities = [0, 0, 0]
     p.time_from_start = rospy.Time(15)
     traj.points = [p]

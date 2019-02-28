@@ -13,7 +13,8 @@
 ---
 2. Start server
   rosrun move hsr_move_joints.py
-
+  or
+  roslaunch move move_server.launch
 ---
 Test server:
 

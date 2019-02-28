@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="move" type="hsr_move_joints.py" name="do_move_joints_server" output="screen" />
+
+</launch>

@@ -25,8 +25,7 @@ class DoMoveJointsServer:
     self.mvt = HsrMove() # ++++++
     self.hg = HsrGripper()
     self.base = HsrOmnibase()
-    #success_omnibase = self.base.move_base(0.05, 0)
-    success_gripper = self.hg.move_gripper(1.2, 0, 0.1)
+    success_gripper = self.hg.move_gripper(0.05, 0, 0.1)
     #self.mvt.init_robot()
     self.utils = Utils()
     
@@ -34,76 +33,33 @@ class DoMoveJointsServer:
   def execute(self, list_desired_joints):
     # Do lots of awesome groundbreaking robot stuff here
     self.mvt.init_robot()
-    #self.mvt.end_pose_robot()
+    success_gripper = self.hg.move_gripper(0.05, 0, 0.1)
     goal_msg= list_desired_joints.goal_msg
-    #print joint_names
-    #print joint_values
-    #print self.object_pose
     if goal_msg == "move":
       joint_names = list_desired_joints.desired_joints_values.joint_names
       joint_values = list_desired_joints.desired_joints_values.desired.positions
       self.do_move_joints(joint_names, joint_values) # +++++
       self.server.set_succeeded(self._result)
     elif goal_msg == "grip":
-      object_pose= []
-      object_pose.append(list_desired_joints.object_pose.position.x)
-      object_pose.append(list_desired_joints.object_pose.position.y)
-      object_pose.append(list_desired_joints.object_pose.position.z)
-      #self.list_pose= []
-      # do move Torso
-      joint_names= ["arm_flex_joint", "wrist_flex_joint"]
-      list_links =  ["arm_flex_link", "wrist_flex_link", "hand_palm_link"]
-      width_object = float(list_desired_joints.width)
-      
-      list_poses = [self.mvt.get_pose(x) for x in list_links]
-      print list_poses
-      arm_flex_value = self.mvt.get_flex_values(list_poses[0], list_poses[1], object_pose)
-      print arm_flex_value
-      wrist_value = self.mvt.get_flex_values(list_poses[1], list_poses[2], object_pose)
-      print wrist_value
-      joint_values = [- arm_flex_value , -1.919 + wrist_value]
-      print(" done grip")
-      
-      self.do_move_joints(joint_names, joint_values) # +++++
-      
-      # do move arm_flex
-      new_hand_palm_link_pose = self.mvt.get_pose("hand_palm_link")
-      new_arm_flex_link_pose = self.mvt.get_pose("arm_flex_link")
-      lift_value = self.mvt.get_arm_lift_up(new_arm_flex_link_pose,new_hand_palm_link_pose, object_pose)
-      s= self.mvt.move_joint("arm_lift_joint", float(lift_value))
-      
+      x_start,y_start, r_start =self.mvt.get_current_base_position()
+      print ("start pose")
+      print(x_start, y_start, r_start)
+      # set grasp pose
+      self.handle_grasp_pose(list_desired_joints)
       # go to object
-      new_hand_palm_link_pose = self.mvt.get_pose("hand_palm_link")
-      print("The new position of hand palm link is :")
-      print new_hand_palm_link_pose
-      print("The position of object is :")
-      print object_pose
-      distance= self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose))
-      print("The distance")
-      print distance
-      success_omnibase = self.base.move_base(distance, 0)
-      
+      self.handle_go_to_object(list_desired_joints)
       # grasp
-      print("Width")
-      print width_object
-      success_gripper = self.hg.move_gripper(width_object, 0, 0.1)
-      
-      
+      self.handle_gripper(list_desired_joints)
       # go back
-      success_omnibase = self.base.move_base(0, 0)
-      
+      success_omnibase = self.base.move_base(x_start, y_start, r_start)
+      # end pose
+      self.mvt.end_pose_robot()
       # let object
       #success_gripper = self.hg.move_gripper(1.2, 0, 0.1)
-      
       # end
-      self.mvt.end_pose_robot()
       self.server.set_succeeded(self._result)
-      
-      #self.do_move_joints(["arm_lift_joint","arm_flex_joint", "wrist_flex_joint"], self.get_joint_values(self.list_pose, object_pose))
     else:
       print("No found goal_msg command")
-    #goal.result_msg = " Move is executed "
-    #self.server.set_succeeded()
     
   def do_move_joints(self, joint_names, joint_values):
     count_success= 0
@@ -136,7 +92,60 @@ class DoMoveJointsServer:
     else:
       print ("Joint list is empty")
       success = False
-      
+  
+  def handle_grasp_pose(self, params):
+    object_pose= self.mvt.parse_pose_to_array(params.object_pose)
+    
+    # get position links before Roboter grasp
+    joint_names= ["arm_flex_joint", "wrist_flex_joint"]
+    list_links =  ["arm_flex_link", "wrist_flex_link", "hand_palm_link"]
+    list_poses = [self.mvt.get_pose("map", x) for x in list_links]
+    print ("fetch values of links")
+    print list_poses
+    
+    # determine values of Positions to grasp
+    arm_flex_value = self.mvt.get_angle_values(list_poses[0], list_poses[1], object_pose)
+    print arm_flex_value
+    wrist_value = self.mvt.get_angle_values(list_poses[1], list_poses[2], object_pose)
+    print wrist_value
+    joint_values = [- arm_flex_value , -1.919 + wrist_value]
+    print("New joints values were calculed") 
+    
+    # do move Torso
+    self.do_move_joints(joint_names, joint_values) # +++++ 
+    
+    # do move arm_flex
+    object_pose_to_odom = self.mvt.parse_pose_to_array(params.object_pose_to_odom)
+    new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
+    new_arm_flex_link_pose = self.mvt.get_pose("odom", "arm_flex_link")
+    lift_value = self.mvt.get_arm_lift_up(new_arm_flex_link_pose, new_hand_palm_link_pose, object_pose_to_odom)
+    s= self.mvt.move_joint("arm_lift_joint", float(lift_value))  
+    
+  def handle_go_to_object(self, params):
+    object_pose_to_odom= self.mvt.parse_pose_to_array(params.object_pose_to_odom)
+    #new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
+    object_pose = self.mvt.parse_pose_to_array(params.object_pose)
+    new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
+    print("The new position of hand palm link to odom is :")
+    print new_hand_palm_link_pose
+    #distance= self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose_to_odom))
+    distance = self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose))
+    print("The distance")
+    print distance
+    current_x, current_y, current_rotation = self.mvt.get_current_base_position()
+    translation_vec = [object_pose_to_odom[0] - new_hand_palm_link_pose[0],
+                       object_pose_to_odom[1] - new_hand_palm_link_pose[1]]
+    x, y = self.mvt.translate([current_x, current_y], translation_vec)
+    print("target position")
+    print (x, y)
+    success_omnibase = self.base.move_base(x, y, current_rotation)
+  
+  def handle_gripper(self, params):
+    width_object = float(params.width)
+    print("Width")
+    print width_object
+    success_gripper = self.hg.move_gripper(width_object, 0, 0.1)
+    
 if __name__ == '__main__':
   rospy.init_node('do_move_joints_server')
   server = DoMoveJointsServer()
