@@ -45,11 +45,11 @@ class DoMoveJointsServer:
       print ("start pose")
       print(x_start, y_start, r_start)
       # set grasp pose
-      self.handle_grasp_pose(list_desired_joints)
+      arm_lift_value = self.handle_grasp_pose(list_desired_joints)
       # go to object
       self.handle_go_to_object(list_desired_joints)
       # grasp
-      self.handle_gripper(list_desired_joints)
+      self.handle_gripper(list_desired_joints, arm_lift_value)
       # go back
       success_omnibase = self.base.move_base(x_start, y_start, r_start)
       # end pose
@@ -119,7 +119,8 @@ class DoMoveJointsServer:
     new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
     new_arm_flex_link_pose = self.mvt.get_pose("odom", "arm_flex_link")
     lift_value = self.mvt.get_arm_lift_up(new_arm_flex_link_pose, new_hand_palm_link_pose, object_pose_to_odom)
-    s= self.mvt.move_joint("arm_lift_joint", float(lift_value))  
+    s= self.mvt.move_joint("arm_lift_joint", float(lift_value))
+    return float(lift_value)
     
   def handle_go_to_object(self, params):
     object_pose_to_odom= self.mvt.parse_pose_to_array(params.object_pose_to_odom)
@@ -140,11 +141,12 @@ class DoMoveJointsServer:
     print (x, y)
     success_omnibase = self.base.move_base(x, y, current_rotation)
   
-  def handle_gripper(self, params):
+  def handle_gripper(self, params, arm_lift_value):
     width_object = float(params.width)
     print("Width")
     print width_object
     success_gripper = self.hg.move_gripper(width_object, 0, 0.1)
+    s = self.mvt.move_joint("arm_lift_joint", float(arm_lift_value+0.05))
     
 if __name__ == '__main__':
   rospy.init_node('do_move_joints_server')
