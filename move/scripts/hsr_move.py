@@ -25,9 +25,15 @@ class HsrMove:
     self.interface = GiskardWrapper()
     self.pose_stamped = PoseStamped()
     #self.list_body_section_name = [section.name for section in Body]
-    #self.list_direction_name = [select_direction.name for select_direction in Direction] #"wrist_flex_joint": -1.57
-    self.states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": 0.0, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0, "arm_lift_joint": 0.0}
-    self.primary_states= {"arm_lift_joint": 0.0, "arm_flex_joint": -0.026, "arm_roll_joint": -1.57, "wrist_flex_joint": -1.57, "wrist_roll_joint": 0.0}
+    #self.list_direction_name = [select_direction.name for select_direction in Direction] #"wrist_flex_joint": -1.57 directdevant, 0.0 enhaut
+    self.states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": 0.0, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
+                   "arm_lift_joint": 0.0}
+    self.place_states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": -1.57, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
+                   "arm_lift_joint": 0.0}
+    self.primary_states= {"arm_lift_joint": 0.0, "arm_flex_joint": -0.026, "arm_roll_joint": -1.57,
+                          "wrist_flex_joint": -1.57, "wrist_roll_joint": 0.0}
+    self.end_states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
+    self.perceive_states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.70, "arm_roll_joint": 1.57}
   
   def init_robot(self):
     """ initialize and set robot movement of the robot """
@@ -36,17 +42,23 @@ class HsrMove:
       #self.interface = GiskardWrapper()
       #self.pose_stamped = PoseStamped()
       print self.states
-      for x,y in self.states.items():
-        self.move_joint(x, y)
-      print ("Start_end_pose is done")
+      self.move_list_joints(self.states)
+      #for x,y in self.states.items():
+        #self.move_joint(x, y)
+      print ("Start_grasp_pose is done")
     except ValueError:
       print "Parameter are invalid"
       
   def end_pose_robot(self):
     self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
-    for x,y in self.end_states.items():
-      self.move_joint(x, y)
-    print ("End_start_pose is done")
+    self.move_list_joints(self.end_states)
+    print ("End_pose is done")
+    return True
+
+  def perceive_robot(self):
+    self.end_states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.70, "arm_roll_joint": 1.57}
+    self.move_list_joints(self.end_states)
+    print ("Perceive_pose is done")
     return True
   
   def do_move(self, move_parameter):
@@ -71,26 +83,29 @@ class HsrMove:
   def move_link(self, frame_id, x, y, z, w):
     """ do move of link """
     print ("Frame_id "+ str(frame_id)+", x: "+ str(x) + ", y: "+ str(y) +", z: "+ str(z) + ", w: "+ str(w))
-    self.pose_stamped.header.frame_id = u'map' #frame_id
-    self.pose_stamped.pose.position.x = x
-    self.pose_stamped.pose.position.y = y
-    self.pose_stamped.pose.position.z = z
+    self.pose_stamped.header.frame_id = "map" #u'map'
+    self.pose_stamped.pose.position.x = 6
+    self.pose_stamped.pose.position.y = 0.0
+    #self.pose_stamped.pose.position.z = 0.3
+    #self.pose_stamped.pose.orientation.x = 0.0
+    #self.pose_stamped.pose.orientation.y = 0.0
     self.pose_stamped.pose.orientation.w = 1
-    self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
+    #self.pose_stamped.pose.orientation.z = 1
+    #self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
+    self.interface.set_cart_goal('base_footprint', "base_link", self.pose_stamped)
     self.interface.plan_and_execute()
     print ("Move link is executed")
     return True
 
     
-  def old_move_link(self, frame_id, x, y, z, w):
+  def move_link_pose(self, pose):
     """ do move of link """
-    print ("Frame_id "+ frame_id+", x: "+ x + ", y: "+ y +", z: "+ z + ", w: "+ w)
-    self.pose_stamped.header.frame_id = u'map' #frame_id
-    self.pose_stamped.pose.position.x = self.get_coordinate(x)
-    self.pose_stamped.pose.position.y = self.get_coordinate(y)
-    self.pose_stamped.pose.position.z = self.get_coordinate(z)
-    self.pose_stamped.pose.orientation.w = self.get_coordinate(w)
-    self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
+    self.pose_stamped.header.frame_id = "base_link"#pose.header.frame_id #frame_id
+    self.pose_stamped.pose.position.x = pose.pose.position.x
+    self.pose_stamped.pose.position.y = pose.pose.position.y
+    self.pose_stamped.pose.position.z = pose.pose.position.z
+    self.pose_stamped.pose.orientation = pose.pose.orientation
+    self.interface.set_cart_goal('base_link', pose.header.frame_id, self.pose_stamped)
     if self.interface.plan_and_execute():
       print ("Move link is executed")
       return True
@@ -115,6 +130,19 @@ class HsrMove:
       return True
     else:
       print ("Move joint isn't executed")
+      return False
+
+  def move_list_joints(self, list_joints):
+    """ do move of joint """
+    print(list_joints)
+    if len(list_joints) > 0:
+      self.interface.set_joint_goal(list_joints)
+      self.interface.disable_self_collision() # 3
+      self.interface.plan_and_execute()
+      print ("List joints is executed")
+      return True
+    else:
+      print ("List Joints is empty")
       return False
   
   def do_move_joints(self, joint_names, joint_values):
@@ -146,7 +174,7 @@ class HsrMove:
     vect_middle_obj = self.get_vector(middle_link_pose, object_pose)
     return float(np.arccos(np.dot(vect_middle_grip,vect_middle_obj) / (np.linalg.norm(vect_middle_grip) * np.linalg.norm(vect_middle_obj))))
     
-  def get_arm_lift_up(self, arm_flex_link, hand_palm_link, object_pose):
+  def get_arm_lift_up(self, hand_palm_link, object_pose):
     """
     This method compute the height of the torso
     :param arm_flex_link:
@@ -154,13 +182,15 @@ class HsrMove:
     :param object_pose:
     :return: height, float
     """
-    h = (object_pose[2] - 0.34) - (hand_palm_link[2] - 0.34)
-    if h > 0 :
-      return float(h)
-    elif h < 0:
-      return float(arm_flex_link[2] - 0.34 - abs(h))
-    else:
-      return h
+    h = (object_pose[2] - hand_palm_link[2])
+    return float(h)
+    #if object_pose[2] > 0.34 and h > 0 :
+    #  return float(h)
+    #elif object_pose[2] <= 0.34:
+    #  return 0.0 #float(arm_flex_link[2] - 0.34 - abs(h))
+    #else:
+    #  return None
+      ##return h
     #arm_lift = 0
     #while(0.67 <= h):
       #arm_lift = arm_lift + h * 0.3
