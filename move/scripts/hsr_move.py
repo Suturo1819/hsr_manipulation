@@ -26,7 +26,7 @@ class HsrMove:
     self.pose_stamped = PoseStamped()
     #self.list_body_section_name = [section.name for section in Body]
     #self.list_direction_name = [select_direction.name for select_direction in Direction] #"wrist_flex_joint": -1.57 directdevant, 0.0 enhaut
-    self.states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": 0.0, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
+    self.states_pre_grasp = {"wrist_roll_joint": 0.0, "wrist_flex_joint": 0.0, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
                    "arm_lift_joint": 0.0}
     self.place_states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": -1.57, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
                    "arm_lift_joint": 0.0}
@@ -49,7 +49,7 @@ class HsrMove:
     except ValueError:
       print "Parameter are invalid"
       
-  def end_pose_robot(self):
+  def end_grasp_pose_robot(self):
     self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
     self.move_list_joints(self.end_states)
     print ("End_pose is done")
@@ -281,3 +281,18 @@ class HsrMove:
     """
     euler = tf.transformations.euler_from_quaternion(rotation)
     return translation[0], translation[1], euler[2]
+
+  def do_frame_rotatiom(self, source, frame_id, roll, pitch, yaw):
+    t,r = self.get_msg_translation_and_rotation(source, frame_id)
+    quaternion = tf.transformations.quaternion_from_euler(roll, pitch, yaw)
+    pose_stamped= PoseStamped()
+    pose_stamped.header.frame_id = frame_id  # u'map'
+    pose_stamped.pose.position.x = t[0]
+    pose_stamped.pose.position.y = t[1]
+    pose_stamped.pose.position.z = t[2]
+    pose_stamped.pose.orientation.x = quaternion[0]
+    pose_stamped.pose.orientation.y = quaternion[1]
+    pose_stamped.pose.orientation.z = quaternion[2]
+    pose_stamped.pose.orientation.w = quaternion[3]
+    return pose_stamped
+

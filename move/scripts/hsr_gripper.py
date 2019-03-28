@@ -51,3 +51,9 @@ class HsrGripper:
     # wait for the action server to complete the order
     self.cli.wait_for_result()
     return self._running
+
+  def close_gripper(self):
+    return self.move_gripper(0.05, 0, 0.1)
+
+  def open_gripper(self):
+    return self.move_gripper(1.2, 0, 0.1)

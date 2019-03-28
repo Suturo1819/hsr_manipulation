@@ -27,6 +27,16 @@ class Mobility:
       "head_pan_joint": ["rotation", "z", -220.0, 100.0],
       "head_tilt_joint": ["rotation", "-y", -90.0, 30.0]
       }
+
+    self.list_of_joints_values_in_rad = {
+      "arm_lift_joint": ["linear", "z", 0.0, 0.69],
+      "arm_flex_joint": ["rotation", "-y", -2.617, 0],
+      "arm_roll_joint": ["rotation", "z", -1.919, 3.665],
+      "wrist_flex_joint": ["rotation", "-y", -1.919, 1.221],
+      "wrist_roll_joint": ["rotation", "z", -1.919, 3.665],
+      "head_pan_joint": ["rotation", "z", -3.839, 1.745],
+      "head_tilt_joint": ["rotation", "-y", -1.570, 0.523]
+    }
       
     print("Mobility checker is actived")
   
@@ -49,8 +59,8 @@ class Mobility:
       :return : array
         info about Joint: [Type, Axis direction, Range or Remarks]
     """
-    if joint_name in self.list_of_joints.keys():
-      return self.list_of_joints[str(joint_name)]
+    if joint_name in self.list_of_joints_values_in_rad.keys():
+      return self.list_of_joints_values_in_rad[str(joint_name)]
     
     print ("Joint isn't in this body")
     return []
@@ -75,4 +85,31 @@ class Mobility:
       return  joint[2] <= value <= joint[3]
     else:
       return False
+
+  def get_validated_value(self, joint_name, value):
+    """
+    this method check if the value is in an interval of joint
+    :param joint_name: joint name
+    :type: string
+    :param value: value of joint
+    :type: float
+    :return: validated value
+    :type: float
+    """
+    details = self.get_info_about_joint(joint_name)
+    if len(details) == 0:
+      print("Joint name was not found")
+      return None
+    else:
+      if details[2] > value and details[3] > value :
+        return details[2]
+      elif details[2] < value and details[3] < value:
+        return details[3]
+      else:
+        return value
+
+
+
+
+
   

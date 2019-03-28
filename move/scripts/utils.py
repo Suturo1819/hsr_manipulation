@@ -1,6 +1,10 @@
 import rospy
 import sys
 import numpy as np
+from geometry_msgs.msg import PoseStamped, Point, Quaternion
+from tf.transformations import quaternion_about_axis
+from PyKDL import *
+import tf
 
 class Utils:
 
@@ -38,3 +42,57 @@ class Utils:
     
   def get_distance(self, vec1, vec2):
     return float(np.linalg.norm(np.array(vec1) - np.array(vec2)))
+
+  def get_vector(self, point1, point2):
+    """ calcul and return a vector from two points """
+    return np.array(point2, float) - np.array(point1, float)
+
+  # same for angle by wrist_flex:  wrist_flex_link_pose, hand_palm_link_pose, object_pose
+  def get_angle_values(self, middle_link_pose, grip_link_pose, object_pose):
+    """
+    this method compute the angle between two links
+    :param middle_link_pose: 3D Vector
+    :param grip_link_pose: 3D Vector
+    :param object_pose: 3D Vector
+    :return: angle, float
+    """
+    vect_middle_grip = self.get_vector(middle_link_pose, grip_link_pose)
+    vect_middle_obj = self.get_vector(middle_link_pose, object_pose)
+    return float(np.arccos(
+      np.dot(vect_middle_grip, vect_middle_obj) / (np.linalg.norm(vect_middle_grip) * np.linalg.norm(vect_middle_obj))))
+
+  def fusion_dict(self, list1, list2):
+    """
+    this method fusion to lists.
+    all keys and values from list2 to list1
+    :param list1:
+    :param list2:
+    :return: fusion_list
+    :type dict
+    """
+    print ("Fusion list no adapted")
+    print list1
+    fusion_list={}
+    for key in list2.keys():
+      if key in list1:
+        fusion_list[key] = list1[key] + list2[key]
+      else:
+        fusion_list[key] = list2[key]
+    for key in list1.keys():
+      if key not in fusion_list:
+        fusion_list[key] = list1[key]
+
+    print ("Fusion list adapted")
+    print list1
+    return fusion_list
+
+
+# 0.146,0.078, 0.685  0.0  wrist_flex
+# 0.146,0.078, 0.685  -1.57  wrist_flex
+
+# 0.158, 0.078, 0.8255  0.0  hand_palm
+# 0.28651, 0.078, 0.67311  -1.57  hand_palm
+
+# 0.141, 0.078, 0.34  0.0 arm_flex arm_flex
+
+# pi 3.1415
