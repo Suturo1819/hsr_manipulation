@@ -1,0 +1,49 @@
+# manipulation code and deps
+- git:
+    local-name: symengine
+    uri: https://github.com/symengine/symengine.git
+    version: 9b604b2
+- git:
+    local-name: symengine.py
+    uri: https://github.com/symengine/symengine.py.git
+    version: 511453a19ebcf21d15879bcbdc65b266cf07120d
+- git:
+    local-name: giskardpy
+    uri: https://github.com/Suturo1819/giskardpy.git
+    version: hsr-devel
+- git:
+   local-name: hsr_meshes
+   uri: https://github.com/Suturo1819/hsr_meshes.git
+- git:
+   local-name: iai_naive_kinematics_sim
+   uri: https://github.com/code-iai/iai_naive_kinematics_sim.git
+   version: 382d140da3a0f498832392757558fca0a3bbfe95
+- git:
+   local-name: qpoases
+   uri: https://github.com/SemRoCo/qpOASES.git
+   version: c20ccf625b4508167ef414c5828cfcf9e7b295aa
+- git:
+   local-name: hsr_manipulation
+   uri: https://github.com/Suturo1819/hsr_manipulation.git
+
+# if this is a standalone install, uncomment the following:
+# - git:
+#     local-name: suturo_msgs
+#     uri: https://github.com/Suturo1819/suturo_msgs.git
+# - git:
+#     local-name: iai_maps
+#     uri: https://github.com/Suturo1819/iai_maps.git
+# - git:
+#     local-name: giskard_msgs
+#     uri: https://github.com/SemRoCo/giskard_msgs.git
+#     version: 323da72495468c5034f113a92e163fecd15f3f29
+# - git:
+#     local-name: hsr_description
+#     uri: https://github.com/Suturo1819/hsr_description.git
+
+
+# not used for now
+# - git:
+#    local-name: pybullet_robots
+#    uri: https://github.com/Suturo1819/pybullet_robots.git
+#    version: 921e2a036afdc5a88dffcacb4a16225c389f3a92
