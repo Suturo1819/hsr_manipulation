@@ -55,16 +55,26 @@ class DoMoveJointsServer:
       # set pre grasp pose
       success_gripper = self.hg.close_gripper()
       self.ha.pre_grasp_init()
-      #self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up=0.0)
-      self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up= list_desired_joints.height/2 + 0.09, top=True)
+      if list_desired_joints.modus == "FRONT":
+        offset= 0
+      elif list_desired_joints.modus == "TOP":
+        offset= list_desired_joints.height/2 + 0.09
+      print ("Offset is:")
+      print offset
+      self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up=float(offset), modus=list_desired_joints.modus )
+      #self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up= list_desired_joints.height/2 + 0.09, modus="FRONT")
+
+      # open gripper
       success_gripper = self.hg.open_gripper()
 
       # go to object
       print("Go to object")
       self.handle_go_to_object(list_desired_joints)
+
       # Grasp Top
-      self.ha.listener.listen_topic()
-      self.mvt.move_list_joints({"arm_lift_joint": float(self.ha.listener.get_value("arm_lift_joint")) - 0.05})
+      if list_desired_joints.modus =="TOP":
+        self.ha.listener.listen_topic()
+        self.mvt.move_list_joints({"arm_lift_joint": float(self.ha.listener.get_value("arm_lift_joint")) - 0.05})
       # grasp
       print("begin gripper")
       success_gripper = self.hg.move_gripper(list_desired_joints.width, 0, list_desired_joints.weight)
@@ -119,9 +129,14 @@ class DoMoveJointsServer:
         self.server.set_preempted()
         success = False
       # pre place pose
+      if list_desired_joints.modus == "FRONT":
+        offset= float(list_desired_joints.height /2 + 0.02)
+      elif list_desired_joints.modus == "TOP":
+        offset= list_desired_joints.height + 0.02
       self.ha.pre_grasp_place_pose(object_pose,
                                    object_pose_to_odom,
-                                   up=float(list_desired_joints.height /2 + 0.02)) # for top
+                                   up=offset,
+                                   modus=list_desired_joints.modus) # for top
                                           # up=float(list_desired_joints.height / 2 + 0.03)
       # go to object
       self.handle_go_to_object(list_desired_joints)
@@ -220,6 +235,13 @@ class DoMoveJointsServer:
     x, y = self.mvt.translate([current_x, current_y], translation_vec)
     print("target position")
     print (x, y)
+    # graps from right
+    if params.modus=="SIDE_RIGHT":
+      success_omnibase = self.base.move_base(x, y, current_rotation - 0.235)
+    # graps from left
+    if params.modus=="SIDE_LEFT":
+      success_omnibase = self.base.move_base(x, y, current_rotation + 0.235)
+
     success_omnibase = self.base.move_base(x, y, current_rotation)
 
     
