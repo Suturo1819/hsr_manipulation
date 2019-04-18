@@ -25,6 +25,7 @@ if __name__ == '__main__':
   goal.object_pose_to_odom.position.z= 0.1 #0.2 #0.6
   goal.width = 0.09
   goal.height = 0.04
+  goal.modus= "FRONT"
   #goal.desired_joints_values.joint_names = ["arm_lift_joint", "arm_flex_joint"]
   #goal.desired_joints_values.desired.positions = [0.0, -1.57]
   #goal.desired_joints_values.desired.positions = [0.0, -0.0]
