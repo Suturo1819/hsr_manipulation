@@ -16,10 +16,14 @@ if __name__ == '__main__':
   
   goal = DoMovePosesGoal()
   p = PoseStamped()
-  p.header.frame_id = 'wrist_roll_link'
-  p.pose.position.x = 0.3
-  p.pose.position.y = 0.0
-  p.pose.position.z = 0.05
+  p.header.frame_id = 'hand_palm_link'
+  p.pose.position.x = 0.4
+  p.pose.position.y = 0.078
+  p.pose.position.z = 0.5
+  p.pose.orientation.x= 0.6889216856587987
+  p.pose.orientation.y = 1.0477472514336402e-07
+  p.pose.orientation.z = 0.7248357821113878
+  p.pose.orientation.w = -2.146110006732656e-08
   goal.list_poses.append(p)
   # Fill in the goal here
   client.send_goal(goal)

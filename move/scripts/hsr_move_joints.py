@@ -15,6 +15,8 @@ from hsr_gripper import HsrGripper
 from hsr_omnibase import HsrOmnibase
 import numpy as np
 import PyKDL as kdl
+from geometry_msgs.msg import PoseStamped, Point, Quaternion
+import tf
 
 class DoMoveJointsServer:
 
@@ -44,6 +46,8 @@ class DoMoveJointsServer:
       joint_names = list_desired_joints.desired_joints_values.joint_names
       joint_values = list_desired_joints.desired_joints_values.desired.positions
       self.do_move_joints(joint_names, joint_values) # +++++
+      
+      rospy.loginfo('Move is success')
       self.server.set_succeeded(self._result)
     elif goal_msg == "grip":
       # Do lots of awesome groundbreaking robot stuff here
@@ -55,15 +59,26 @@ class DoMoveJointsServer:
       # set pre grasp pose
       success_gripper = self.hg.close_gripper()
       self.ha.pre_grasp_init()
-      if list_desired_joints.modus == "FRONT":
+      if list_desired_joints.modus == "FRONT" or (list_desired_joints.modus == "SIDE_RIGHT" or list_desired_joints.modus == "SIDE_LEFT"):
         offset= 0
       elif list_desired_joints.modus == "TOP":
         offset= list_desired_joints.height/2 + 0.09
       print ("Offset is:")
       print offset
       self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up=float(offset), modus=list_desired_joints.modus )
-      #self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up= list_desired_joints.height/2 + 0.09, modus="FRONT")
-
+      euler_rot = tf.transformations.euler_from_quaternion([
+        list_desired_joints.object_pose.orientation.x,
+        list_desired_joints.object_pose.orientation.y,
+        list_desired_joints.object_pose.orientation.z,
+        list_desired_joints.object_pose.orientation.w])
+      if euler_rot[2] > 0 and list_desired_joints.modus == "TOP":
+        self.mvt.move_list_joints({"wrist_roll_joint": euler_rot[2] - 1.47})
+      elif euler_rot[2] <= 0 and list_desired_joints.modus == "TOP":
+        self.mvt.move_list_joints({"wrist_roll_joint": euler_rot[2] + 1.47})
+      if list_desired_joints.modus == "SIDE_RIGHT" or list_desired_joints.modus == "SIDE_LEFT":
+        print("object orientation is:")
+        print(list_desired_joints.object_pose.orientation)
+        self.ha.grasp_by_side(list_desired_joints.object_pose.orientation)
       # open gripper
       success_gripper = self.hg.open_gripper()
 
@@ -74,7 +89,7 @@ class DoMoveJointsServer:
       # Grasp Top
       if list_desired_joints.modus =="TOP":
         self.ha.listener.listen_topic()
-        self.mvt.move_list_joints({"arm_lift_joint": float(self.ha.listener.get_value("arm_lift_joint")) - 0.05})
+        self.mvt.move_list_joints({"arm_lift_joint": float(self.ha.listener.get_value("arm_lift_joint")) - 0.075})
       # grasp
       print("begin gripper")
       success_gripper = self.hg.move_gripper(list_desired_joints.width, 0, list_desired_joints.weight)
