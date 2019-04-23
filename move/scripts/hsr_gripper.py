@@ -64,8 +64,8 @@ class HsrGripper:
     l= Listener()
     l.set_topic_and_typMEssage("/hsrb/joint_states", JointState)
     l.listen_topic_with_sensor_msg()
-    #return l.get_value_from_sensor_msg("hand_motor_joint") == -0.38
-    return l.get_value_from_sensor_msg("hand_motor_joint") > (width_object-0.035)
+    return l.get_value_from_sensor_msg("hand_motor_joint") > -0.2
+    #return l.get_value_from_sensor_msg("hand_motor_joint") > (width_object-0.035)
 
 
 if __name__ == '__main__':
