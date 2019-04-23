@@ -39,7 +39,7 @@ class HsrGripper:
     traj = trajectory_msgs.msg.JointTrajectory()
     traj.joint_names = ["hand_motor_joint"]
     p = trajectory_msgs.msg.JointTrajectoryPoint()
-    p.positions = [position_value]
+    p.positions = [position_value - 0.42]
     p.velocities = [velocity] #0
     p.effort = [effort] # 0.1
     p.time_from_start = rospy.Time(3)
@@ -60,11 +60,16 @@ class HsrGripper:
     return self.move_gripper(1.2, 0, 0.1)
 
   def object_in_gripper(self, width_object):
-    self.move_gripper(-0.38, 0, 0.0)
+    self.move_gripper(-0.62, 0, 0.0)
     l= Listener()
     l.set_topic_and_typMEssage("/hsrb/joint_states", JointState)
     l.listen_topic_with_sensor_msg()
-    return l.get_value_from_sensor_msg("hand_motor_joint") > -0.2
+    current_hand_motor_value= l.get_value_from_sensor_msg("hand_motor_joint")
+    print("Current hand motor joint is:")
+    print current_hand_motor_value
+    print("Is object in gripper ?")
+    print current_hand_motor_value >= -0.5
+    return current_hand_motor_value >= -0.5
     #return l.get_value_from_sensor_msg("hand_motor_joint") > (width_object-0.035)
 
 
