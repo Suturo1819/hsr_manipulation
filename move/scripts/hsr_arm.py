@@ -25,7 +25,7 @@ class HsrArm:
     self.listener= l()
     self.utils = Utils()
     self.listener.set_topic_and_typMEssage("/hsrb/arm_trajectory_controller/state", JointTrajectoryControllerState)
-    # self.listener.set_topic_and_typMEssage("/whole_body_controller/state", JointTrajectoryControllerState)
+    #self.listener.set_topic_and_typMEssage("/whole_body_controller/state", JointTrajectoryControllerState)
 
   def bottom_grasp_joints(self, arm_flex_joint_value):
     """
@@ -128,6 +128,10 @@ class HsrArm:
       # check if grasp is from top, then add
       if modus=="TOP":
         self.mvt.move_list_joints(self.utils.fusion_dict(self.grasp_by_up(), joints))
+      elif modus=="SIDE_RIGHT":
+        self.mvt.move_list_joints(self.grasp_by_side_right(joints["arm_flex_joint"]))
+      elif modus=="SIDE_LEFT":
+        self.mvt.move_list_joints(self.grasp_by_side_left(joints["arm_flex_joint"]))
 
       hand_palm_pose_to_odom= self.mvt.get_pose("map", "hand_palm_link")
       self.mvt.move_list_joints({"arm_lift_joint":
@@ -163,6 +167,11 @@ class HsrArm:
           validated_joint[key] = self.check_mobility.get_validated_value(key, joints[key])
         self.mvt.move_list_joints(validated_joint)
 
+        if modus == "SIDE_RIGHT":
+          self.mvt.move_list_joints(self.grasp_by_side_right(validated_joint["arm_flex_joint"]))
+        elif modus == "SIDE_LEFT":
+          self.mvt.move_list_joints(self.grasp_by_side_left(validated_joint["arm_flex_joint"]))
+
 
 
     else:
@@ -174,6 +183,10 @@ class HsrArm:
       self.mvt.move_list_joints({"arm_lift_joint":
                                    up+self.arm_lift_value(hand_palm_pose_to_odom,
                                                        object_pose_to_odom)})
+      if modus=="SIDE_RIGHT":
+        self.mvt.move_list_joints(self.grasp_by_side_right(joints["arm_flex_joint"]))
+      elif modus=="SIDE_LEFT":
+        self.mvt.move_list_joints(self.grasp_by_side_left(joints["arm_flex_joint"]))
 
   def end_pre_grasp(self):
     self.listener.listen_topic()
@@ -195,19 +208,19 @@ class HsrArm:
     }
     self.mvt.move_list_joints(goal_js)
 
-  def grasp_by_side_right(self, wrist_roll_value):
+  def grasp_by_side_right(self, arm_flex_value):
     goal_js = {
-      "wrist_flex_joint": 1.57,
-      "wrist_roll_joint": wrist_roll_value,
+      "wrist_flex_joint": -1.57,
+      "wrist_roll_joint": arm_flex_value,
       "arm_roll_joint": 1.57
     }
     #self.mvt.move_list_joints(goal_js)
     return goal_js
 
-  def grasp_by_side_left(self, wrist_roll_value):
+  def grasp_by_side_left(self, arm_flex_value):
     goal_js = {
       "wrist_flex_joint": -1.57,
-      "wrist_roll_joint": wrist_roll_value,
+      "wrist_roll_joint": abs(arm_flex_value),
       "arm_roll_joint": -1.57
     }
     return goal_js
@@ -219,5 +232,21 @@ class HsrArm:
     }
     return goal_js
     #self.mvt.move_link_pose(self.mvt.do_frame_rotatiom("odom", "hand_palm_link", 0, -1.57, 0))
+
+  def open_door_from_left(self):
+    goal_js = {
+      "wrist_flex_joint": -1.57,
+      "wrist_roll_joint": 1.57,
+      "arm_roll_joint": -1.57
+    }
+    return goal_js
+
+  def open_door_from_right(self):
+    goal_js = {
+      "wrist_flex_joint": -1.57,
+      "wrist_roll_joint": -1.57,
+      "arm_roll_joint": 1.57
+    }
+    return goal_js
 
 

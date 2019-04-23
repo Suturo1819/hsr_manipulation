@@ -75,10 +75,7 @@ class DoMoveJointsServer:
         self.mvt.move_list_joints({"wrist_roll_joint": euler_rot[2] - 1.47})
       elif euler_rot[2] <= 0 and list_desired_joints.modus == "TOP":
         self.mvt.move_list_joints({"wrist_roll_joint": euler_rot[2] + 1.47})
-      if list_desired_joints.modus == "SIDE_RIGHT" or list_desired_joints.modus == "SIDE_LEFT":
-        print("object orientation is:")
-        print(list_desired_joints.object_pose.orientation)
-        self.ha.grasp_by_side(list_desired_joints.object_pose.orientation)
+      
       # open gripper
       success_gripper = self.hg.open_gripper()
 
@@ -103,6 +100,12 @@ class DoMoveJointsServer:
       print("begin end pose")
       self.ha.end_grasp_place()
       # end
+      if self.hg.object_in_gripper(list_desired_joints.width):
+        self._result.result_msg = ("Success")
+        rospy.loginfo('Grasp is sucessfull')
+      else:
+        self._result.result_msg = ("Failed")
+        rospy.loginfo('Grasp is failed')
       self.server.set_succeeded(self._result)
     elif goal_msg == "perceive":
       if self.server.is_preempt_requested():
@@ -130,7 +133,51 @@ class DoMoveJointsServer:
       if success:
         self._result.result_msg = ("perceive pose is done")
         self.server.set_succeeded(self._result)
-        rospy.loginfo('perceive pose is success')
+        rospy.loginfo('perceive up pose is success')
+
+    elif goal_msg == "door":
+      if self.server.is_preempt_requested():
+        rospy.loginfo('the server do_move_joints is Preempted')
+        self.server.set_preempted()
+        success = False
+
+      object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
+      object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
+      x_start, y_start, r_start = self.mvt.get_current_base_position()
+      print ("start pose")
+      print(x_start, y_start, r_start)
+      # close gripper
+      self.hg.move_gripper(-0.2, 0, 0.8)
+      # pre pose
+      self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up=0, modus=list_desired_joints.modus)
+      # set pre open pose
+      if list_desired_joints.modus == "LEFT":
+        self.mvt.move_list_joints({"wrist_roll_joint": -1.57})
+      elif list_desired_joints.modus == "RIGHT":
+        self.mvt.move_list_joints({"wrist_roll_joint": 1.57})
+
+      # go to door
+      print("Go to object")
+      self.handle_go_to_object(list_desired_joints)
+
+
+      # open door
+      x_current, y_current, r_current = self.mvt.get_current_base_position()
+      if list_desired_joints.modus == "LEFT":
+        self.mvt.move_list_joints(self.ha.open_door_from_left())
+        success_omnibase = self.base.move_base(x_current, y_current, r_current - 0.7)
+        success_omnibase = self.base.move_base(x_current, y_current, r_current)
+      elif list_desired_joints.modus == "RIGHT":
+        self.mvt.move_list_joints(self.ha.open_door_from_right())
+        success_omnibase = self.base.move_base(x_current, y_current, r_current + 0.7)
+        success_omnibase = self.base.move_base(x_current, y_current, r_current)
+      success= True
+
+      if success:
+        self._result.result_msg = ("Open door is done")
+        self.server.set_succeeded(self._result)
+        rospy.loginfo('Open door is success')
+
 
     elif goal_msg == "place":
       self.mvt.move_list_joints(self.mvt.place_states)
@@ -144,7 +191,7 @@ class DoMoveJointsServer:
         self.server.set_preempted()
         success = False
       # pre place pose
-      if list_desired_joints.modus == "FRONT":
+      if list_desired_joints.modus == "FRONT" or (list_desired_joints.modus == "SIDE_RIGHT" or list_desired_joints.modus == "SIDE_LEFT"):
         offset= float(list_desired_joints.height /2 + 0.02)
       elif list_desired_joints.modus == "TOP":
         offset= list_desired_joints.height + 0.02

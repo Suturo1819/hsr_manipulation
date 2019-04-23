@@ -7,6 +7,7 @@ import rospy
 import message_filters as MF
 from tf2_msgs.msg import TFMessage
 from control_msgs.msg import JointTrajectoryControllerState
+from sensor_msgs.msg import JointState
 
 class Listener:
   """
@@ -27,10 +28,21 @@ class Listener:
     print self._msg.joint_names
     print self._msg.actual.positions
 
+  def listen_topic_with_sensor_msg(self):
+    self._msg = rospy.wait_for_message(self._topic, self._typ_msg)
+    print self._msg.name
+    print self._msg.position
+
   def get_value(self, joint_name):
     for x in range(0, len(self._msg.joint_names)):  # for x in range(0, len(self._msg.joint_names)):
       if self._msg.joint_names[x] == joint_name:
         return round(self._msg.actual.positions[x], 2)
+    return None
+
+  def get_value_from_sensor_msg(self, joint_name):
+    for x in range(0, len(self._msg.name)):  # for x in range(0, len(self._msg.joint_names)):
+      if self._msg.name[x] == joint_name:
+        return round(self._msg.position[x], 2)
     return None
 
 if __name__ == '__main__':

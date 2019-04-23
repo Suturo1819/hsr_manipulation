@@ -47,3 +47,9 @@ class HsrOmnibase:
     # wait for the action server to complete the order
     self.cli.wait_for_result()
     return self._running
+
+if __name__ == '__main__':
+  rospy.init_node('check_basis')
+  basis = HsrOmnibase()
+  basis.move_base(-0.00, -0.00, -0.235)
+  print("move base is done.")

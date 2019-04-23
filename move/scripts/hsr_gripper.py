@@ -5,7 +5,8 @@ import control_msgs.msg
 import controller_manager_msgs.srv
 import rospy
 import trajectory_msgs.msg
-
+from listener import Listener
+from sensor_msgs.msg import JointState
 #rospy.init_node('test')
 
 class HsrGripper:
@@ -57,3 +58,17 @@ class HsrGripper:
 
   def open_gripper(self):
     return self.move_gripper(1.2, 0, 0.1)
+
+  def object_in_gripper(self, width_object):
+    self.move_gripper(-0.38, 0, 0.0)
+    l= Listener()
+    l.set_topic_and_typMEssage("/hsrb/joint_states", JointState)
+    l.listen_topic_with_sensor_msg()
+    #return l.get_value_from_sensor_msg("hand_motor_joint") == -0.38
+    return l.get_value_from_sensor_msg("hand_motor_joint") > (width_object-0.035)
+
+
+if __name__ == '__main__':
+  rospy.init_node('check_gripper')
+  gripper = HsrGripper()
+  gripper.move_gripper(-0.4, 0.0, 0.0)
