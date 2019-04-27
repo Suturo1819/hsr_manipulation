@@ -51,30 +51,21 @@ class DoMoveJointsServer:
       self.server.set_succeeded(self._result)
     elif goal_msg == "grip":
       # Do lots of awesome groundbreaking robot stuff here
-      object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
-      object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
+      #object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
+      #object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
       x_start,y_start, r_start =self.mvt.get_current_base_position()
       print ("start pose")
       print(x_start, y_start, r_start)
       # set pre grasp pose
       success_gripper = self.hg.close_gripper()
-      self.ha.pre_grasp_init()
+      #self.ha.pre_grasp_init()
       if list_desired_joints.modus == "FRONT" or (list_desired_joints.modus == "SIDE_RIGHT" or list_desired_joints.modus == "SIDE_LEFT"):
         offset= 0
       elif list_desired_joints.modus == "TOP":
         offset= list_desired_joints.height/2 + 0.09
       print ("Offset is:")
       print offset
-      self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up=float(offset), modus=list_desired_joints.modus )
-      euler_rot = tf.transformations.euler_from_quaternion([
-        list_desired_joints.object_pose.orientation.x,
-        list_desired_joints.object_pose.orientation.y,
-        list_desired_joints.object_pose.orientation.z,
-        list_desired_joints.object_pose.orientation.w])
-      if euler_rot[2] > 0 and list_desired_joints.modus == "TOP":
-        self.mvt.move_list_joints({"wrist_roll_joint": euler_rot[2] - 1.47})
-      elif euler_rot[2] <= 0 and list_desired_joints.modus == "TOP":
-        self.mvt.move_list_joints({"wrist_roll_joint": euler_rot[2] + 1.47})
+      self.ha.pre_grasp_place_pose(list_desired_joints.object_pose, list_desired_joints.object_pose_to_odom, up=float(offset), modus=list_desired_joints.modus )
       
       # open gripper
       success_gripper = self.hg.open_gripper()
@@ -135,21 +126,35 @@ class DoMoveJointsServer:
         self.server.set_succeeded(self._result)
         rospy.loginfo('perceive up pose is success')
 
+    elif goal_msg == "perceive_side":
+      if self.server.is_preempt_requested():
+        rospy.loginfo('the server do_move_joints is Preempted')
+        self.server.set_preempted()
+        success = False
+
+      self.ha.perceive_side()
+      success= True
+
+      if success:
+        self._result.result_msg = ("perceive side pose is done")
+        self.server.set_succeeded(self._result)
+        rospy.loginfo('perceive side pose is success')
+
     elif goal_msg == "door":
       if self.server.is_preempt_requested():
         rospy.loginfo('the server do_move_joints is Preempted')
         self.server.set_preempted()
         success = False
 
-      object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
-      object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
+      #object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
+      #object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
       x_start, y_start, r_start = self.mvt.get_current_base_position()
       print ("start pose")
       print(x_start, y_start, r_start)
       # close gripper
       self.hg.move_gripper(-0.2, 0, 0.8)
       # pre pose
-      self.ha.pre_grasp_place_pose(object_pose, object_pose_to_odom, up=0, modus=list_desired_joints.modus)
+      self.ha.pre_grasp_place_pose(list_desired_joints.object_pose, list_desired_joints.object_pose_to_odom, up=0, modus=list_desired_joints.modus)
       # set pre open pose
       if list_desired_joints.modus == "LEFT":
         self.mvt.move_list_joints({"wrist_roll_joint": -1.57})
@@ -180,11 +185,11 @@ class DoMoveJointsServer:
 
 
     elif goal_msg == "place":
-      self.mvt.move_list_joints(self.mvt.place_states)
+      #self.mvt.move_list_joints(self.mvt.place_states)
       x_start, y_start, r_start = self.mvt.get_current_base_position()
       # Do lots of awesome groundbreaking robot stuff here
-      object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
-      object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
+      #object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
+      #object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
 
       if self.server.is_preempt_requested():
         rospy.loginfo('the server do_move_joints is Preempted')
@@ -195,8 +200,8 @@ class DoMoveJointsServer:
         offset= float(list_desired_joints.height /2 + 0.02)
       elif list_desired_joints.modus == "TOP":
         offset= list_desired_joints.height + 0.02
-      self.ha.pre_grasp_place_pose(object_pose,
-                                   object_pose_to_odom,
+      self.ha.pre_grasp_place_pose(list_desired_joints.object_pose,
+                                   list_desired_joints.object_pose_to_odom,
                                    up=offset,
                                    modus=list_desired_joints.modus) # for top
                                           # up=float(list_desired_joints.height / 2 + 0.03)

@@ -100,7 +100,7 @@ class HsrMove:
     
   def move_link_pose(self, pose):
     """ do move of link """
-    self.pose_stamped.header.frame_id = "base_link"#pose.header.frame_id #frame_id
+    self.pose_stamped.header.frame_id = "map" #pose.header.frame_id #frame_id
     self.pose_stamped.pose.position.x = pose.pose.position.x
     self.pose_stamped.pose.position.y = pose.pose.position.y
     self.pose_stamped.pose.position.z = pose.pose.position.z
