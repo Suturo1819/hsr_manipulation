@@ -48,6 +48,8 @@ class DoMoveJointsServer:
       self.do_move_joints(joint_names, joint_values) # +++++
       
       rospy.loginfo('Move is success')
+      #self._result.result_msg= ' '.join(str(e) for e in joint_names) + ": " + ' '.join(str(e) for e in joint_values)
+      self._result.result_msg= "Success"
       self.server.set_succeeded(self._result)
     elif goal_msg == "grip":
       # Do lots of awesome groundbreaking robot stuff here
@@ -86,17 +88,19 @@ class DoMoveJointsServer:
       print("The end of handle grasp pose")
       self.ha.end_pre_grasp()
       # go back
-      success_omnibase = self.base.move_base(x_start, y_start, r_start)
-      # end pose
-      print("begin end pose")
-      self.ha.end_grasp_place()
-      # end
+      #success_omnibase = self.base.move_base(x_start, y_start, r_start)
+
       if self.hg.object_in_gripper(list_desired_joints.width):
         self._result.result_msg = ("Success")
         rospy.loginfo('Grasp is sucessfull')
       else:
         self._result.result_msg = ("Failed")
         rospy.loginfo('Grasp is failed')
+
+      # end pose
+      print("begin end pose")
+      self.ha.end_grasp_place()
+      # end, send result msg
       self.server.set_succeeded(self._result)
     elif goal_msg == "perceive":
       if self.server.is_preempt_requested():
@@ -108,7 +112,7 @@ class DoMoveJointsServer:
       success= True
 
       if success:
-        self._result.result_msg = ("perceive pose is done")
+        self._result.result_msg = ("Perceive done")
         self.server.set_succeeded(self._result)
         rospy.loginfo('perceive pose is success')
 
@@ -122,7 +126,7 @@ class DoMoveJointsServer:
       success= True
 
       if success:
-        self._result.result_msg = ("perceive pose is done")
+        self._result.result_msg = ("Perceive_up done")
         self.server.set_succeeded(self._result)
         rospy.loginfo('perceive up pose is success')
 
@@ -136,7 +140,7 @@ class DoMoveJointsServer:
       success= True
 
       if success:
-        self._result.result_msg = ("perceive side pose is done")
+        self._result.result_msg = ("perceive_side done")
         self.server.set_succeeded(self._result)
         rospy.loginfo('perceive side pose is success')
 
@@ -155,15 +159,16 @@ class DoMoveJointsServer:
       self.hg.move_gripper(-0.2, 0, 0.8)
       # pre pose
       self.ha.pre_grasp_place_pose(list_desired_joints.object_pose, list_desired_joints.object_pose_to_odom, up=0, modus=list_desired_joints.modus)
-      # set pre open pose
-      if list_desired_joints.modus == "LEFT":
-        self.mvt.move_list_joints({"wrist_roll_joint": -1.57})
-      elif list_desired_joints.modus == "RIGHT":
-        self.mvt.move_list_joints({"wrist_roll_joint": 1.57})
 
       # go to door
       print("Go to object")
       self.handle_go_to_object(list_desired_joints)
+
+      # set pre open pose
+      if list_desired_joints.modus == "LEFT":
+        self.mvt.move_list_joints({"wrist_roll_joint": -1.1})
+      elif list_desired_joints.modus == "RIGHT":
+        self.mvt.move_list_joints({"wrist_roll_joint": 1.1})
 
 
       # open door
@@ -179,7 +184,7 @@ class DoMoveJointsServer:
       success= True
 
       if success:
-        self._result.result_msg = ("Open door is done")
+        self._result.result_msg = ("Open door done")
         self.server.set_succeeded(self._result)
         rospy.loginfo('Open door is success')
 
@@ -216,7 +221,7 @@ class DoMoveJointsServer:
       self.ha.end_grasp_place()
 
       if success:
-        self._result.result_msg = ("Place pose is done")
+        self._result.result_msg = ("Place done")
         self.server.set_succeeded(self._result)
         rospy.loginfo('Place Object is success')
     else:

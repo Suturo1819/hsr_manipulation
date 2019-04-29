@@ -50,7 +50,8 @@ class HsrMove:
       print "Parameter are invalid"
       
   def end_grasp_pose_robot(self):
-    self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
+    #self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
+    self.end_states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 0.0}
     self.move_list_joints(self.end_states)
     print ("End_pose is done")
     return True
@@ -148,7 +149,8 @@ class HsrMove:
   def do_move_joints(self, joint_names, joint_values):
     if(len(joint_names) == len(joint_names)) and len(joint_names) > 0:
       for x in range(len(joint_names)):
-        self.move_joint(joint_names[x], joint_values[x])
+        check_value= self.check_mobility.get_validated_value(joint_names[x], joint_values[x])
+        self.move_joint(joint_names[x], check_value)
       print ("End move joint")
     else:
       print ("Joint list is empty")
