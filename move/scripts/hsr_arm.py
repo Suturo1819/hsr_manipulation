@@ -304,4 +304,4 @@ class HsrArm:
     print("Orientation object is:")
     print object_pose.orientation
     print euler_rot[2]
-    return euler_rot[2] + 1.6 #1.570796326795
+    return euler_rot[2] + 1.57 #1.570796326795
