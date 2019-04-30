@@ -236,7 +236,7 @@ class HsrArm:
       "wrist_roll_joint": 0.0,
       "wrist_flex_joint": -1.57,
       "arm_roll_joint": 0.0,
-      "arm_flex_joint": -0.75,
+      "arm_flex_joint": -0.3,
       "arm_lift_joint": 0.0
     }
     self.mvt.move_list_joints(goal_js)
@@ -304,4 +304,4 @@ class HsrArm:
     print("Orientation object is:")
     print object_pose.orientation
     print euler_rot[2]
-    return euler_rot[2] + 1.570796326795
+    return euler_rot[2] + 1.6 #1.570796326795

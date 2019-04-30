@@ -88,7 +88,7 @@ class DoMoveJointsServer:
       print("The end of handle grasp pose")
       self.ha.end_pre_grasp()
       # go back
-      #success_omnibase = self.base.move_base(x_start, y_start, r_start)
+      success_omnibase = self.base.move_base(x_start, y_start, r_start)
 
       if self.hg.object_in_gripper(list_desired_joints.width):
         self._result.result_msg = ("Success")
