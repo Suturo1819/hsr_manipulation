@@ -165,15 +165,16 @@ class HsrArm:
         joints = self.pre_pose_bottom(1.8)
         joints = self.utils.fusion_dict(self.grasp_by_up(), joints)
         validated_joint={}
-        validated_joint["arm_lift_joint"] = self.check_mobility.get_validated_value("arm_lift_joint",
-                                                                                    float(up + object_pose_to_odom[
-                                                                                      2] - 0.11625))
-                                                                                    #float(up + object_pose_to_odom[2]-0.225))
+
         for key in joints.keys():
           validated_joint[key] = self.check_mobility.get_validated_value(key, joints[key])
 
         # top pose wrist roll
-        validated_joint["wrist_roll_joint"]= self.wrist_roll_value_for_top_pose(object_pose)
+        validated_joint["wrist_roll_joint"]= self.wrist_roll_value_for_top_pose(object_pose1)
+        validated_joint["arm_lift_joint"] = self.check_mobility.get_validated_value("arm_lift_joint",
+                                                                                    float(up + object_pose_to_odom[
+                                                                                      2] - 0.11625))
+        # float(up + object_pose_to_odom[2]-0.225))
         self.mvt.move_list_joints(validated_joint)
 
         #hand_palm_pose_to_odom = self.mvt.get_pose("map", "hand_palm_link")
@@ -273,8 +274,8 @@ class HsrArm:
 
   def grasp_by_up(self):
     goal_js = {
-      "wrist_flex_joint": -1.57  #1.57
-      #"wrist_roll_joint": -1.57
+      "wrist_flex_joint": -1.57, #1.57
+      "arm_roll_joint": 0.0
     }
     return goal_js
     #self.mvt.move_link_pose(self.mvt.do_frame_rotatiom("odom", "hand_palm_link", 0, -1.57, 0))

@@ -54,13 +54,13 @@ class HsrGripper:
     return self._running
 
   def close_gripper(self):
-    return self.move_gripper(0.05, 0, 0.1)
+    return self.move_gripper(0.05, 1, 0.0)
 
   def open_gripper(self):
-    return self.move_gripper(1.2, 0, 0.1)
+    return self.move_gripper(1.2, 1, 0.0)
 
   def object_in_gripper(self, width_object):
-    self.move_gripper(-0.62, 0, 0.0)
+    self.move_gripper(-2, 1, 0.8)
     l= Listener()
     l.set_topic_and_typMEssage("/hsrb/joint_states", JointState)
     l.listen_topic_with_sensor_msg()

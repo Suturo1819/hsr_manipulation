@@ -63,8 +63,10 @@ class DoMoveJointsServer:
       #self.ha.pre_grasp_init()
       if list_desired_joints.modus == "FRONT" or (list_desired_joints.modus == "SIDE_RIGHT" or list_desired_joints.modus == "SIDE_LEFT"):
         offset= 0
-      elif list_desired_joints.modus == "TOP":
+      elif list_desired_joints.modus == "TOP" and list_desired_joints.height > 0.06:
         offset= list_desired_joints.height/2 + 0.09
+      elif list_desired_joints.modus == "TOP" and list_desired_joints.height <= 0.06:
+        offset = 0.135 + list_desired_joints.height / 2
       print ("Offset is:")
       print offset
       self.ha.pre_grasp_place_pose(list_desired_joints.object_pose, list_desired_joints.object_pose_to_odom, up=float(offset), modus=list_desired_joints.modus )
@@ -82,20 +84,22 @@ class DoMoveJointsServer:
         self.mvt.move_list_joints({"arm_lift_joint": float(self.ha.listener.get_value("arm_lift_joint")) - 0.075})
       # grasp
       print("begin gripper")
-      success_gripper = self.hg.move_gripper(list_desired_joints.width, 0, list_desired_joints.weight)
+      success_gripper = self.hg.move_gripper(list_desired_joints.width, 1, list_desired_joints.weight)
       print("End gripper")
-      # end pre grasp
-      print("The end of handle grasp pose")
-      self.ha.end_pre_grasp()
-      # go back
-      success_omnibase = self.base.move_base(x_start, y_start, r_start)
 
+      # check if gegriffen
       if self.hg.object_in_gripper(list_desired_joints.width):
         self._result.result_msg = ("Success")
         rospy.loginfo('Grasp is sucessfull')
       else:
         self._result.result_msg = ("Failed")
         rospy.loginfo('Grasp is failed')
+
+      # end pre grasp
+      print("The end of handle grasp pose")
+      self.ha.end_pre_grasp()
+      # go back
+      success_omnibase = self.base.move_base(x_start, y_start, r_start)
 
       # end pose
       print("begin end pose")
