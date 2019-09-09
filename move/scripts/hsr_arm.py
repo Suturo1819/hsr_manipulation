@@ -213,17 +213,33 @@ class HsrArm:
         self.mvt.move_list_joints(self.grasp_by_side_left(joints["arm_flex_joint"]))
 
   def end_pre_grasp(self):
+    """
+    this method listens and performs special movements of the torso
+    :return:
+    """
     self.listener.listen_topic()
     arm_lift = self.listener.get_value("arm_lift_joint")
     self.mvt.move_list_joints({"arm_lift_joint": arm_lift + 0.03})
 
   def end_grasp_place(self):
+    """
+    This method execute the end of grasp pose
+    :return:
+    """
     self.mvt.end_grasp_pose_robot()
 
   def pre_grasp_init(self):
+    """
+    This method execute the pre grasp pose
+    :return:
+    """
     self.mvt.move_list_joints(self.mvt.states_pre_grasp)
 
   def perceive_up(self):
+    """
+    This method execute the perceive up pose, this help for better objects perception
+    :return:
+    """
     goal_js = {
       "arm_lift_joint": 0.1,
       "arm_flex_joint": -2.6,
@@ -233,6 +249,10 @@ class HsrArm:
     self.mvt.move_list_joints(goal_js)
 
   def perceive_side(self):
+    """
+    This method  execute the perceive side pose.
+    :return:
+    """
     goal_js= {
       "wrist_roll_joint": 0.0,
       "wrist_flex_joint": -1.57,
@@ -243,6 +263,11 @@ class HsrArm:
     self.mvt.move_list_joints(goal_js)
 
   def grasp_by_side_right(self, arm_flex_value):
+    """
+    calculates the rotation needed to catch from the right
+    :param arm_flex_value: float
+    :return: list of joints
+    """
     goal_js = {
       "wrist_flex_joint": -1.57,
       "wrist_roll_joint": arm_flex_value,
@@ -252,6 +277,11 @@ class HsrArm:
     return goal_js
 
   def grasp_by_side_left(self, arm_flex_value):
+    """
+    calculates the rotation needed to catch from the left
+    :param arm_flex_value: float
+    :return: list of joints
+    """
     goal_js = {
       "wrist_flex_joint": -1.57,
       "wrist_roll_joint": abs(arm_flex_value),
@@ -281,6 +311,10 @@ class HsrArm:
     #self.mvt.move_link_pose(self.mvt.do_frame_rotatiom("odom", "hand_palm_link", 0, -1.57, 0))
 
   def open_door_from_left(self):
+    """
+    the method calculate the pose to open the left door
+    :return:
+    """
     goal_js = {
       "wrist_flex_joint": -1.57,
       "wrist_roll_joint": 1.57,
@@ -289,6 +323,9 @@ class HsrArm:
     return goal_js
 
   def open_door_from_right(self):
+    """
+    this method calculate the pose to open the right door
+    """
     goal_js = {
       "wrist_flex_joint": -1.57,
       "wrist_roll_joint": -1.57,

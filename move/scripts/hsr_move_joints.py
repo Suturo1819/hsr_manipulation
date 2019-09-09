@@ -295,6 +295,12 @@ class DoMoveJointsServer:
 
 
   def handle_go_to_object(self, params):
+    """
+    this method calculates the distance between the position of basis and the position of object to grasp,
+    In next time, the robot will be driven to the object to catch or deposit.
+    :param params: DoMoveAction.msg
+    :return:
+    """
     object_pose_to_odom= self.mvt.parse_pose_to_array(params.object_pose_to_odom)
     #new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
     object_pose = self.mvt.parse_pose_to_array(params.object_pose)

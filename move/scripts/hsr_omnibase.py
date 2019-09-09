@@ -30,6 +30,13 @@ class HsrOmnibase:
                 self._running = True
                 
   def move_base(self, x, y, z):
+    """
+    move the basis/robot in room with these coordinates x, y, z
+    :param x: x-position
+    :param y: y-position
+    :param z: rotation
+    :return:
+    """
     # fill ROS message
     goal = control_msgs.msg.FollowJointTrajectoryGoal()
     traj = trajectory_msgs.msg.JointTrajectory()
