@@ -53,10 +53,10 @@ class Listener:
     :param joint_name: str
     :return: float
     """
-    for x in range(0, len(self._msg.joint_names)):  # for x in range(0, len(self._msg.joint_names)):
+    for x in range(0, len(self._msg.joint_names)):
       if self._msg.joint_names[x] == joint_name:
         return round(self._msg.actual.positions[x], 2)
-    return None
+    return -1
 
   def get_value_from_sensor_msg(self, joint_name):
     """
@@ -64,10 +64,10 @@ class Listener:
     :param joint_name: str
     :return: float
     """
-    for x in range(0, len(self._msg.name)):  # for x in range(0, len(self._msg.joint_names)):
+    for x in range(0, len(self._msg.name)):
       if self._msg.name[x] == joint_name:
         return round(self._msg.position[x], 2)
-    return None
+    return -1
 
 if __name__ == '__main__':
   rospy.init_node('check_tf')

@@ -40,21 +40,15 @@ class DoMoveJointsServer:
     goal_msg= list_desired_joints.goal_msg
     if goal_msg == "move":
       # Do lots of awesome groundbreaking robot stuff here
-      #self.mvt.init_robot()
-      #self.mvt.move_list_joints(self.mvt.states)
-
       joint_names = list_desired_joints.desired_joints_values.joint_names
       joint_values = list_desired_joints.desired_joints_values.desired.positions
-      self.do_move_joints(joint_names, joint_values) # +++++
+      self.do_move_joints(joint_names, joint_values)
       
       rospy.loginfo('Move is success')
-      #self._result.result_msg= ' '.join(str(e) for e in joint_names) + ": " + ' '.join(str(e) for e in joint_values)
       self._result.result_msg= "Success"
       self.server.set_succeeded(self._result)
     elif goal_msg == "grip":
       # Do lots of awesome groundbreaking robot stuff here
-      #object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
-      #object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
       x_start,y_start, r_start =self.mvt.get_current_base_position()
       print ("start pose")
       print(x_start, y_start, r_start)
@@ -154,8 +148,6 @@ class DoMoveJointsServer:
         self.server.set_preempted()
         success = False
 
-      #object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
-      #object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
       x_start, y_start, r_start = self.mvt.get_current_base_position()
       print ("start pose")
       print(x_start, y_start, r_start)
@@ -194,11 +186,8 @@ class DoMoveJointsServer:
 
 
     elif goal_msg == "place":
-      #self.mvt.move_list_joints(self.mvt.place_states)
       x_start, y_start, r_start = self.mvt.get_current_base_position()
       # Do lots of awesome groundbreaking robot stuff here
-      #object_pose = self.mvt.parse_pose_to_array(list_desired_joints.object_pose)
-      #object_pose_to_odom = self.mvt.parse_pose_to_array(list_desired_joints.object_pose_to_odom)
 
       if self.server.is_preempt_requested():
         rospy.loginfo('the server do_move_joints is Preempted')
@@ -302,13 +291,10 @@ class DoMoveJointsServer:
     :return:
     """
     object_pose_to_odom= self.mvt.parse_pose_to_array(params.object_pose_to_odom)
-    #new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
     object_pose = self.mvt.parse_pose_to_array(params.object_pose)
     new_hand_palm_link_pose = self.mvt.get_pose("odom", "hand_palm_link")
     print("The new position of hand palm link to odom is :")
     print new_hand_palm_link_pose
-    #distance= self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose_to_odom))
-    #distance = self.mvt.get_distance(np.array(new_hand_palm_link_pose), np.array(object_pose))
     print("The distance")
     #print distance
     current_x, current_y, current_rotation = self.mvt.get_current_base_position()

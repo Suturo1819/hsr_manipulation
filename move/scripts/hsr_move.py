@@ -24,8 +24,6 @@ class HsrMove:
     self.check_mobility = Mobility()
     self.interface = GiskardWrapper()
     self.pose_stamped = PoseStamped()
-    #self.list_body_section_name = [section.name for section in Body]
-    #self.list_direction_name = [select_direction.name for select_direction in Direction] #"wrist_flex_joint": -1.57 directdevant, 0.0 enhaut
     self.states_pre_grasp = {"wrist_roll_joint": 0.0, "wrist_flex_joint": 0.0, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
                    "arm_lift_joint": 0.0}
     self.place_states = {"wrist_roll_joint": 0.0, "wrist_flex_joint": -1.57, "arm_roll_joint": 0.0, "arm_flex_joint": 0.0,
@@ -38,19 +36,13 @@ class HsrMove:
   def init_robot(self):
     """ initialize and set robot movement of the robot """
     try:
-      #self.node = rospy.init_node('move')
-      #self.interface = GiskardWrapper()
-      #self.pose_stamped = PoseStamped()
       print self.states
       self.move_list_joints(self.states)
-      #for x,y in self.states.items():
-        #self.move_joint(x, y)
       print ("Start_grasp_pose is done")
     except ValueError:
       print "Parameter are invalid"
       
   def end_grasp_pose_robot(self):
-    #self.end_states= {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 1.57}
     self.end_states = {"arm_lift_joint": 0.0, "arm_flex_joint": 0.0, "wrist_flex_joint": -1.0, "arm_roll_joint": 0.0}
     self.move_list_joints(self.end_states)
     print ("End_pose is done")
@@ -84,15 +76,10 @@ class HsrMove:
   def move_link(self, frame_id, x, y, z, w):
     """ do move of link """
     print ("Frame_id "+ str(frame_id)+", x: "+ str(x) + ", y: "+ str(y) +", z: "+ str(z) + ", w: "+ str(w))
-    self.pose_stamped.header.frame_id = "map" #u'map'
+    self.pose_stamped.header.frame_id = "map"
     self.pose_stamped.pose.position.x = 6
     self.pose_stamped.pose.position.y = 0.0
-    #self.pose_stamped.pose.position.z = 0.3
-    #self.pose_stamped.pose.orientation.x = 0.0
-    #self.pose_stamped.pose.orientation.y = 0.0
     self.pose_stamped.pose.orientation.w = 1
-    #self.pose_stamped.pose.orientation.z = 1
-    #self.interface.set_cart_goal('base_link', str(frame_id), self.pose_stamped)
     self.interface.set_cart_goal('base_footprint', "base_link", self.pose_stamped)
     self.interface.plan_and_execute()
     print ("Move link is executed")
@@ -101,7 +88,7 @@ class HsrMove:
     
   def move_link_pose(self, pose):
     """ do move of link """
-    self.pose_stamped.header.frame_id = "map" #pose.header.frame_id #frame_id
+    self.pose_stamped.header.frame_id = "map"
     self.pose_stamped.pose.position.x = pose.pose.position.x
     self.pose_stamped.pose.position.y = pose.pose.position.y
     self.pose_stamped.pose.position.z = pose.pose.position.z
@@ -124,8 +111,8 @@ class HsrMove:
     """ do move of joint """
     print(str(frame_id), float(value))
     if self.check_mobility.validate(str(frame_id), float(value)):
-      self.interface.set_joint_goal({str(frame_id): self.get_coordinate(value)}) # nur Gelenkwinkel #3
-      self.interface.disable_self_collision() # 3
+      self.interface.set_joint_goal({str(frame_id): self.get_coordinate(value)})
+      self.interface.disable_self_collision()
       self.interface.plan_and_execute()
       print ("Move is executed")
       return True
@@ -138,7 +125,7 @@ class HsrMove:
     print(list_joints)
     if len(list_joints) > 0:
       self.interface.set_joint_goal(list_joints)
-      self.interface.disable_self_collision() # 3
+      self.interface.disable_self_collision()
       self.interface.plan_and_execute()
       print ("List joints is executed")
       return True
@@ -169,9 +156,6 @@ class HsrMove:
     :param object_pose: 3D Vector
     :return: angle, float
     """
-    #arm_flex_link_pose[1]=0
-    #wrist_flex_link_pose[1]= 0
-    #object_pose[1]= 0
     vect_middle_grip = self.get_vector(middle_link_pose, grip_link_pose)
     vect_middle_obj = self.get_vector(middle_link_pose, object_pose)
     return float(np.arccos(np.dot(vect_middle_grip,vect_middle_obj) / (np.linalg.norm(vect_middle_grip) * np.linalg.norm(vect_middle_obj))))
@@ -186,17 +170,6 @@ class HsrMove:
     """
     h = (object_pose[2] - hand_palm_link[2])
     return float(h)
-    #if object_pose[2] > 0.34 and h > 0 :
-    #  return float(h)
-    #elif object_pose[2] <= 0.34:
-    #  return 0.0 #float(arm_flex_link[2] - 0.34 - abs(h))
-    #else:
-    #  return None
-      ##return h
-    #arm_lift = 0
-    #while(0.67 <= h):
-      #arm_lift = arm_lift + h * 0.3
-      #h = h - arm_lift
     
     
     
@@ -209,14 +182,13 @@ class HsrMove:
     """
     tf_buffer = tf2_ros.Buffer()
     tf_listener = tf2_ros.TransformListener(tf_buffer)
-    #print tf_listener
     ps = PoseStamped()
     
     transform = tf_buffer.lookup_transform(source,
                                          frame_id,
                                          rospy.Time(0),
                                          rospy.Duration(5.0))
-    #print transform
+    
     pose_transformed = tf2_geometry_msgs.do_transform_pose(ps, transform)
     return [pose_transformed.pose.position.x, pose_transformed.pose.position.y, pose_transformed.pose.position.z]
 
@@ -229,7 +201,6 @@ class HsrMove:
     """
     tf_buffer = tf2_ros.Buffer()
     tf_listener = tf2_ros.TransformListener(tf_buffer)
-    # print tf_listener
     ps = PoseStamped()
 
     transform = tf_buffer.lookup_transform(source,

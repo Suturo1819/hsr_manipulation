@@ -47,7 +47,6 @@ class Utils:
     """ calcul and return a vector from two points """
     return np.array(point2, float) - np.array(point1, float)
 
-  # same for angle by wrist_flex:  wrist_flex_link_pose, hand_palm_link_pose, object_pose
   def get_angle_values(self, middle_link_pose, grip_link_pose, object_pose):
     """
     this method compute the angle between two links
@@ -86,13 +85,3 @@ class Utils:
     print list1
     return fusion_list
 
-
-# 0.146,0.078, 0.685  0.0  wrist_flex
-# 0.146,0.078, 0.685  -1.57  wrist_flex
-
-# 0.158, 0.078, 0.8255  0.0  hand_palm
-# 0.28651, 0.078, 0.67311  -1.57  hand_palm
-
-# 0.141, 0.078, 0.34  0.0 arm_flex arm_flex
-
-# pi 3.1415
